@@ -1,0 +1,24 @@
+package dao;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+
+
+import model.ModelFuncionario;
+
+public class FuncionarioDAO {
+	
+	
+	public void CadastraFuncionario(ModelFuncionario funcionario) {
+		
+		try {
+			PreparedStatement statement = connection.prepareStatement(sql);
+	        statement.setString(1, funcionario.getNome());
+	        statement.setString(2, funcionario.getCpf());
+
+        } catch (SQLException e) {
+        }
+		
+	}
+
+}

@@ -1,0 +1,24 @@
+package model;
+
+public class ModelFuncionario {
+	private String nome;
+	private String cpf;
+	private int id;
+	private String cargo;
+	private String telefone;
+	private String usuario;
+	private String senha;
+
+	public ModelFuncionario(String nome, String cpf, int id, String cargo, String telefone, String usuario,
+			String senha) {
+		this.nome = nome;
+		this.cpf = cpf;
+		this.id = id;
+		this.cargo = cargo;
+		this.telefone = telefone;
+		this.usuario = usuario;
+		this.senha = senha;
+
+	}
+
+}

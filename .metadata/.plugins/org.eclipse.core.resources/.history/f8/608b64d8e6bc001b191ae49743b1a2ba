@@ -1,0 +1,16 @@
+package dao;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import model.ModelFuncionario;
+
+public class FuncionarioDAO {
+	
+	
+	public void CadastraFuncionario(ModelFuncionario funcionario) {
+		
+
+		
+	}
+
+}
