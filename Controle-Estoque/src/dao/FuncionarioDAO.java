@@ -11,28 +11,36 @@ import model.ModelFuncionario;
 
 public class FuncionarioDAO {
 
-	public void CadastraFuncionario(ModelFuncionario funcionario) throw new PersistenciaExcpetion {
+	public boolean CadastraFuncionario(ModelFuncionario funcionario){
 
-		try {
 			String sql = "INSERT INTO FUNCIONARIO(NOME, CPF,  ID, CARGO, TELEFONE, USUARIO, SENHA) "
 					+ "VALUES(?, ?, ?, ?, ?,?,?)";
-			Connection connection = ConexaoUtil.getInstance().getConnection();
-			PreparedStatement statement = connection.prepareStatement(sql);
-			statement.setString(1, funcionario.getNome());
-			statement.setString(2, funcionario.getCpf());
-			statement.setInt(3, funcionario.getId());
-			statement.setString(4, funcionario.getCargo());
-			statement.setString(5, funcionario.getTelefone());
-			statement.setString(6, funcionario.getUsuario());
-			statement.setString(7, funcionario.getSenha());
-			statement.execute();
-			connection.close();
+			Connection connection;
 			
-
-		} catch (Exception e) {
-            e.printStackTrace();
-            throw new PersistenciaExcpetion(e.getMessage(), e);
-        }
+			try {
+				
+				connection = ConexaoUtil.getInstance().getConnection();
+				
+				PreparedStatement statement = connection.prepareStatement(sql);
+				statement.setString(1, funcionario.getNome());
+				statement.setString(2, funcionario.getCpf());
+				statement.setInt(3, funcionario.getId());
+				statement.setString(4, funcionario.getCargo());
+				statement.setString(5, funcionario.getTelefone());
+				statement.setString(6, funcionario.getUsuario());
+				statement.setString(7, funcionario.getSenha());
+				statement.execute();
+				connection.close();
+				return true;
+				
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return false;
 
 	}
 
