@@ -7,6 +7,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import controller.FuncionarioController;
+import dao.FuncionarioDAO;
+import model.ModelFuncionario;
+
  
 public class ConnectionFactory {
  
@@ -26,7 +31,7 @@ public class ConnectionFactory {
    * @throws Exception
    */
    public static Connection createConnectionToMySQL() throws Exception{
-      Class.forName("com.mysql.jdbc.Driver"); //Faz com que a classe seja carregada pela JVM
+      Class.forName("com.mysql.cj.jdbc.Driver"); //Faz com que a classe seja carregada pela JVM
  
       //Cria a conexão com o banco de dados
       Connection connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
@@ -43,6 +48,9 @@ public class ConnectionFactory {
          System.out.println("Conexão obtida com sucesso!" + con);
          con.close();
       }
- 
+      
+      ModelFuncionario f1 = new ModelFuncionario("", "352652929749", 2, "teste", "9999999", "teste", "teste");
+      int erro = new FuncionarioController().cadastrarFuncionario(f1);
+      System.out.println(erro);
    }
 }

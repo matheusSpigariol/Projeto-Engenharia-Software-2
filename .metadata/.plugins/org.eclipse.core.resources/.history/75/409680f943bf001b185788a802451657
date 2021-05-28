@@ -1,0 +1,4 @@
+mysql=com.mysql.jdbc.Driver
+conexao = jdbc:mysql://localhost:3306/estoque
+usuario = root
+senha= root

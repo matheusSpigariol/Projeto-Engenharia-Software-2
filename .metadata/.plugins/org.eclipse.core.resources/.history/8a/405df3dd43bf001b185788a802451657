@@ -1,0 +1,4 @@
+br.edu.devmedia.drive.mysql=com.mysql.jdbc.Driver
+br.edu.devmedia.url.conexao = jdbc:mysql://localhost:3306/estoque
+br.edu.devmedia.bd.usuario = root
+br.edu.devmedia.bd.senha= root
