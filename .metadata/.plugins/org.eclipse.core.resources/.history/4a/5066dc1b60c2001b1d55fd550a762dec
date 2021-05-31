@@ -106,13 +106,12 @@ public class TelaInicial {
 		
 		JPanel panel_1 = new JPanel();
 		
-		JLabel lblNewLabel = new JLabel("MARLON------------------------------------------------------------------");
+		JLabel lblNewLabel = new JLabel("New label");
 		/*/JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon(ViewFuncionario.class.getResource("C:\\Users\\ViníciusRozendoFerra\\Documents\\1Vinicius\\1Faculdade\\1Matérias\\prog\\EngSoftware2\\Projeto-Engenharia-Software-2")));
 		lblNewLabel.setBounds(100, 0, 250, 250);
 		TelaInicial.getContentPane().add(lblNewLabel);/*/
-		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)

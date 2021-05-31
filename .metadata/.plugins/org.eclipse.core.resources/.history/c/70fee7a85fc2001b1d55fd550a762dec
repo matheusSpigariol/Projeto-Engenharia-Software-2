@@ -3,9 +3,11 @@ package telaInicial;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
@@ -106,12 +108,11 @@ public class TelaInicial {
 		
 		JPanel panel_1 = new JPanel();
 		
-		JLabel lblNewLabel = new JLabel("MARLON------------------------------------------------------------------");
-		/*/JLabel lblNewLabel = new JLabel("");
+		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon(ViewFuncionario.class.getResource("C:\\Users\\ViníciusRozendoFerra\\Documents\\1Vinicius\\1Faculdade\\1Matérias\\prog\\EngSoftware2\\Projeto-Engenharia-Software-2")));
 		lblNewLabel.setBounds(100, 0, 250, 250);
-		TelaInicial.getContentPane().add(lblNewLabel);/*/
+		TelaInicial.getContentPane().add(lblNewLabel);
 		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
@@ -167,5 +168,10 @@ public class TelaInicial {
 		frame.getContentPane().setLayout(groupLayout);
 		frame.getContentPane().setBackground(new Color(238,232,170));
 
+	}
+
+	private static Container getContentPane() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
