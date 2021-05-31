@@ -14,7 +14,6 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
-import java.awt.Panel;
 
 public class ViewFuncionario {
 
@@ -54,6 +53,7 @@ public class ViewFuncionario {
 	 */
 	private void initialize() {
 		JanelaDeCadastro = new JFrame();
+		JanelaDeCadastro.setTitle("Cadastro de Funcion\u00E1rios");
 		JanelaDeCadastro.getContentPane().setBackground(new Color(238, 232, 170));
 		JanelaDeCadastro.setBounds(100, 100, 440, 600);
 		JanelaDeCadastro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,7 +70,7 @@ public class ViewFuncionario {
 		IconLabel.setBounds(100, 0, 250, 250);
 		JanelaDeCadastro.getContentPane().add(IconLabel);
 		
-		JLabel Header = new JLabel("Cadastro de Funcion√°rios");
+		JLabel Header = new JLabel("Cadastro de Funcion·rios");
 		Header.setFont(new Font("Dialog", Font.BOLD, 20));
 		Header.setVerticalAlignment(SwingConstants.BOTTOM);
 		Header.setHorizontalAlignment(SwingConstants.CENTER);
@@ -84,7 +84,7 @@ public class ViewFuncionario {
 		
 		JLabel CargoLabel = new JLabel("Cargo:");
 		CargoLabel.setFont(new Font("Dialog", Font.BOLD, 15));
-		CargoLabel.setBounds(40, 340, 70, 15);
+		CargoLabel.setBounds(40, 340, 70, 19);
 		JanelaDeCadastro.getContentPane().add(CargoLabel);
 		
 		JLabel TelLabel = new JLabel("Telefone:");
@@ -92,7 +92,7 @@ public class ViewFuncionario {
 		TelLabel.setBounds(40, 370, 95, 15);
 		JanelaDeCadastro.getContentPane().add(TelLabel);
 		
-		JLabel UserLabel = new JLabel("Usu√°rio:");
+		JLabel UserLabel = new JLabel("Usu·rio:");
 		UserLabel.setFont(new Font("Dialog", Font.BOLD, 15));
 		UserLabel.setBounds(40, 400, 70, 15);
 		JanelaDeCadastro.getContentPane().add(UserLabel);
@@ -146,54 +146,54 @@ public class ViewFuncionario {
 				
 				if(NomeValue.isEmpty()) {
 					error = true;
-					ErrorText = "Preencha o Nome do Funcion√°rio ";
+					ErrorText = "Preencha o Nome do Funcion·rio ";
 				}
 				if(CPFValue.isEmpty()) {
 					error = true;
 					if(ErrorText.isEmpty()) {
-						ErrorText = "Preencha o CPF do Funcion√°rio ";
+						ErrorText = "Preencha o CPF do Funcion·rio ";
 					}else {
-						ErrorText += "\nPreencha o CPF do Funcion√°rio";
+						ErrorText += "\nPreencha o CPF do Funcion·rio";
 					}
 					
 				}
 				if(CargoValue.isEmpty()) {
 					error = true;
 					if(ErrorText.isEmpty()) {
-						ErrorText = "Preencha o Cargo do Funcion√°rio ";
+						ErrorText = "Preencha o Cargo do Funcion·rio ";
 					}else {
-						ErrorText += "\nPreencha o Cargo do Funcion√°rio";
+						ErrorText += "\nPreencha o Cargo do Funcion·rio";
 					}
 				}
 				if(TelefoneValue.isEmpty()) {
 					error = true;
 					if(ErrorText.isEmpty()) {
-						ErrorText = "Preencha o Telefone do Funcion√°rio ";
+						ErrorText = "Preencha o Telefone do Funcion·rio ";
 					}else {
-						ErrorText += "\nPreencha o Telefone do Funcion√°rio";
+						ErrorText += "\nPreencha o Telefone do Funcion·rio";
 					}
 				}
 				if(UserValue.isEmpty()) {
 					error = true;
 					if(ErrorText.isEmpty()) {
-						ErrorText = "Preencha o Usu√°rio do Funcion√°rio ";
+						ErrorText = "Preencha o Usu·rio do Funcion·rio ";
 					}else {
-						ErrorText += "\nPreencha o Usu√°rio do Funcion√°rio";
+						ErrorText += "\nPreencha o Usu·rio do Funcion·rio";
 					}
 				}
 				if(passwordValue.isEmpty()) {
 					error = true;
 					if(ErrorText.isEmpty()) {
-						ErrorText = "Preencha a Senha do Funcion√°rio ";
+						ErrorText = "Preencha a Senha do Funcion·rio ";
 					}else {
-						ErrorText += "\nPreencha o Senha do Funcion√°rio";
+						ErrorText += "\nPreencha o Senha do Funcion·rio";
 					}
 				}
 				if(error == false) {
-					JOptionPane.showMessageDialog(null, "Funcion√°rio Cadastrado!", "Sucesso", JOptionPane.DEFAULT_OPTION);
-					/*  Caso todos os dados estejam devidamente preenchidos o Funcion√°rio ser√° cadastrado.
-					 * 	Podemos criar outras regras de verifica√ß√¢o de dados, mas a priori s√£o regras b√°sicas.					 
-					 * 	A partir das strings ExemploValue √© poss√≠vel apanhar os valores dos inputs.
+					JOptionPane.showMessageDialog(null, "Funcion·rio Cadastrado!", "Sucesso", JOptionPane.DEFAULT_OPTION);
+					/*  Caso todos os dados estejam devidamente preenchidos o Funcion·rio ser· cadastrado.
+					 * 	Podemos criar outras regras de verificaÁ„o de dados, mas a priori s„o regras b·sicas.					 
+					 * 	A partir das strings ExemploValue È possÌvel apanhar os valores dos inputs.
 					 * */
 				} else {
 					JOptionPane.showMessageDialog(null, ErrorText, "Erro", JOptionPane.ERROR_MESSAGE);
