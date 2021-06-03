@@ -26,7 +26,7 @@ public class FuncionarioController{
 			return 4;
 		}else if((f.getSenha() == null || f.getSenha() == "")){
 			return 5;
-		}else if(new FuncionarioDAO().CadastraFuncionario(f)){
+		}else if(new FuncionarioDAO().cadastraFuncionario(f)){
 			return 0;
 		}else {
 			return 6;
