@@ -39,7 +39,7 @@ public class ConnectionFactory {
  
       return connection;
    }
-   public static void main(String[] args) throws Exception{
+   public void conexao() throws Exception{
  
       //Recupera uma conexão com o banco de dados
       Connection con = createConnectionToMySQL();
@@ -49,11 +49,7 @@ public class ConnectionFactory {
          System.out.println("Conexão obtida com sucesso!" + con);
          con.close();
       }
-      
-      ViewFuncionario vf1 = new ViewFuncionario();
-      vf1.rodaJanela();
-
-      
+          
       /*
       ModelFuncionario f1 = new ModelFuncionario("", "352652929749", 2, "teste", "9999999", "teste", "teste");
       int erro = new FuncionarioController().cadastrarFuncionario(f1);

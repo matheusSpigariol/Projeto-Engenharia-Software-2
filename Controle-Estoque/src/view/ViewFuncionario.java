@@ -192,7 +192,7 @@ public class ViewFuncionario {
 					JOptionPane.showMessageDialog(null, ErrorText, "Erro", JOptionPane.ERROR_MESSAGE);
 				}
 				ModelFuncionario fun = new ModelFuncionario(String.valueOf(NomeInput.getText()), String.valueOf(CPFInput.getText()),
-						23, String.valueOf(CargoInput.getText()), String.valueOf(TelefoneInput.getText()),
+						5, String.valueOf(CargoInput.getText()), String.valueOf(TelefoneInput.getText()),
 						String.valueOf(UserInput.getText()), String.valueOf(passwordField.getText()));
 				int erro = new FuncionarioController().cadastrarFuncionario(fun);
 			    System.out.println(erro);
