@@ -31,16 +31,6 @@ public class ViewFuncionario {
 
 	FuncionarioController f = new FuncionarioController(new ModelFuncionario());
 
-	/**
-	 * Launch the application.
-	 */
-	/*
-	 * public void ViewFuncionario() { EventQueue.invokeLater(new Runnable() {
-	 * public void run() { try { ViewFuncionario window = new ViewFuncionario();
-	 * window.JanelaDeCadastro.setVisible(true); } catch (Exception e) {
-	 * e.printStackTrace(); } } }); }
-	 */
-
 	public void rodaJanela() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -53,16 +43,10 @@ public class ViewFuncionario {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public ViewFuncionario() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		JanelaDeCadastro = new JFrame();
 		JanelaDeCadastro.setTitle("Cadastro de Funcion\u00E1rios");
@@ -204,12 +188,6 @@ public class ViewFuncionario {
 				if (error == false) {
 					JOptionPane.showMessageDialog(null, "Funcionário Cadastrado!", "Sucesso",
 							JOptionPane.DEFAULT_OPTION);
-					/*
-					 * Caso todos os dados estejam devidamente preenchidos o Funcionário será
-					 * cadastrado. Podemos criar outras regras de verificação de dados, mas a priori
-					 * são regras básicas. A partir das strings ExemploValue é possível apanhar os
-					 * valores dos inputs.
-					 */
 				} else {
 					JOptionPane.showMessageDialog(null, ErrorText, "Erro", JOptionPane.ERROR_MESSAGE);
 				}
