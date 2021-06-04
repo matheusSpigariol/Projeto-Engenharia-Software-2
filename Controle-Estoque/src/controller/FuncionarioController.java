@@ -5,6 +5,17 @@ import model.ModelFuncionario;
 
 public class FuncionarioController{
 	
+	private ModelFuncionario funcionario;
+	
+	public FuncionarioController(ModelFuncionario modelFuncionario) {
+		this.funcionario = modelFuncionario;
+	}
+	
+	public FuncionarioController() {
+			
+	}
+	
+
 	/*
 	 * retorna 0 se cadastrou com sucesso
 	 * retorna 1 se nome é null 

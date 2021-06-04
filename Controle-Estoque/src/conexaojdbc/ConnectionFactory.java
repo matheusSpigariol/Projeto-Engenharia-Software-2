@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import controller.FuncionarioController;
 import dao.FuncionarioDAO;
 import model.ModelFuncionario;
+import view.ViewFuncionario;
 
  
 public class ConnectionFactory {
@@ -19,7 +20,7 @@ public class ConnectionFactory {
    private static final String USERNAME = "root";
  
    //Senha do mysql
-   private static final String PASSWORD = "";
+   private static final String PASSWORD = "root";
  
    //Dados de caminho, porta e nome da base de dados que irá ser feita a conexão
    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/estoque";
@@ -49,8 +50,14 @@ public class ConnectionFactory {
          con.close();
       }
       
+      ViewFuncionario vf1 = new ViewFuncionario();
+      vf1.rodaJanela();
+
+      
+      /*
       ModelFuncionario f1 = new ModelFuncionario("", "352652929749", 2, "teste", "9999999", "teste", "teste");
       int erro = new FuncionarioController().cadastrarFuncionario(f1);
       System.out.println(erro);
+      */
    }
 }

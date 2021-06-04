@@ -1,3 +1,5 @@
-/dao/
+/.metadata/
+/.gitignore
 /conexaojdbc/
 /controller/
+/dao/

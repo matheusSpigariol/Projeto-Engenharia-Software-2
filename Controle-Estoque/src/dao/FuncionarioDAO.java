@@ -21,7 +21,7 @@ public class FuncionarioDAO {
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, funcionario.getNome());
 			statement.setString(2, funcionario.getCpf());
-			statement.setInt(3, funcionario.getId());
+			statement.setInt(3, 0);
 			statement.setString(4, funcionario.getCargo());
 			statement.setString(5, funcionario.getTelefone());
 			statement.setString(6, funcionario.getUsuario());
