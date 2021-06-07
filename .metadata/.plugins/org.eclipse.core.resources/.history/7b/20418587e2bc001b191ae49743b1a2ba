@@ -1,5 +1,0 @@
-package conexaojdbc;
-
-public class ConnectionFactory {
-
-}

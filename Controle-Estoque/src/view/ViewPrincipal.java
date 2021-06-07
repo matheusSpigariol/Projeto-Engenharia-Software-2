@@ -23,7 +23,7 @@ import javax.swing.JLabel;
 
 public class ViewPrincipal {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField textField;
 
 	/**
@@ -114,7 +114,8 @@ public class ViewPrincipal {
 		
 		JPanel panel_1 = new JPanel();
 		
-		JLabel lblNewLabel = new JLabel("MARLON------------------------------------------------------------------");
+		JLabel lblNewLabel = new JLabel("MARLON");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		/*/JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon(ViewFuncionario.class.getResource("C:\\Users\\ViníciusRozendoFerra\\Documents\\1Vinicius\\1Faculdade\\1Matérias\\prog\\EngSoftware2\\Projeto-Engenharia-Software-2")));
