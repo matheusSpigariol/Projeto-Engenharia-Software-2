@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ViewListaFunc {
 
@@ -20,8 +22,8 @@ public class ViewListaFunc {
 	private JTextField textField;
 	private JTextField textoBusca;
 	private JTable table;
-	private final String colunas[]={"Nome","CPF","Cargo", "Telefone", "Usuario"};
-	private final String dados[][]={};
+	private final String colunas[]={"Nome","CPF","Cargo", "Telefone", "Usuario", "Senha"};
+	private final String dados[][]={{"Aqui", "é", "onde", "os", "dados", "ficarão"}};
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -63,11 +65,11 @@ public class ViewListaFunc {
 		frmListaDeFuncionrios.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btnVolta = new JButton("Voltar");
-		btnVolta.setBounds(10, 517, 197, 23);
+		btnVolta.setBounds(110, 516, 197, 23);
 		btnVolta.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				ViewGerenciaFunc vf1 = new ViewGerenciaFunc();
-			    vf1.rodaJanela();
+				frmListaDeFuncionrios.setVisible(false);
 			}
 		});
 		
@@ -93,9 +95,41 @@ public class ViewListaFunc {
 		});
 		btnAdiciona.setBounds(10, 249, 111, 23);
 		
+		JLabel editNome = new JLabel("Nome:");
+		JLabel editCPF = new JLabel("CPF:");
+		JLabel editCargo = new JLabel("Cargo:");
+		JLabel editTelefone = new JLabel("Telefone:");
+		JLabel editUsuario = new JLabel("Usu\u00E1rio:");
+		JLabel editSenha = new JLabel("Senha:");
+		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				editNome.setEnabled(false);
+				editCPF.setEnabled(false);
+				editCargo.setEnabled(false);
+				editTelefone.setEnabled(false);
+				editUsuario.setEnabled(false);
+				editSenha.setEnabled(false);
+			}
+		});
+		
 		JButton btnAltera = new JButton("Alterar");
 		btnAltera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				editNome.setEnabled(true);
+				editCPF.setEnabled(true);
+				editCargo.setEnabled(true);
+				editTelefone.setEnabled(true);
+				editUsuario.setEnabled(true);
+				editSenha.setEnabled(true);
+				btnSalvar.setEnabled(true);
+				btnCancelar.setEnabled(true);
 			}
 		});
 		btnAltera.setBounds(303, 249, 111, 23);
@@ -125,6 +159,17 @@ public class ViewListaFunc {
 		frmListaDeFuncionrios.getContentPane().add(scrollPane);
 		
 		table = new JTable(dados,colunas);
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				/*Essa função é para quando o usuário clicar em cima dos dados de um funcionário,
+				 * possibilitando, assim, alterar ou remover aquele usuário da linha
+				 * que estiver clicada, mas não sei se ajuda de fato (clown emoji)
+				 */
+				btnAltera.setEnabled(true);
+				btnRemove.setEnabled(true);
+			}
+		});
 		scrollPane.setViewportView(table);
 		
 		JLabel lblNewLabel = new JLabel("-----Lista de Funcion\u00E1rios------");
@@ -132,36 +177,27 @@ public class ViewListaFunc {
 		lblNewLabel.setBounds(99, 31, 237, 14);
 		frmListaDeFuncionrios.getContentPane().add(lblNewLabel);
 		
-		JButton btnInicio = new JButton("P\u00E1gina Inicial");
-		btnInicio.setBounds(217, 517, 197, 23);
-		frmListaDeFuncionrios.getContentPane().add(btnInicio);
-		
-		JLabel editNome = new JLabel("Nome:");
+	
 		editNome.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		editNome.setBounds(20, 296, 46, 14);
 		frmListaDeFuncionrios.getContentPane().add(editNome);
 		
-		JLabel editCPF = new JLabel("CPF:");
 		editCPF.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		editCPF.setBounds(20, 321, 46, 14);
 		frmListaDeFuncionrios.getContentPane().add(editCPF);
 		
-		JLabel editCargo = new JLabel("Cargo:");
 		editCargo.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		editCargo.setBounds(20, 346, 46, 14);
 		frmListaDeFuncionrios.getContentPane().add(editCargo);
 		
-		JLabel editTelefone = new JLabel("Telefone:");
 		editTelefone.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		editTelefone.setBounds(20, 371, 56, 14);
 		frmListaDeFuncionrios.getContentPane().add(editTelefone);
 		
-		JLabel editUsuario = new JLabel("Usu\u00E1rio:");
 		editUsuario.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		editUsuario.setBounds(20, 395, 46, 14);
 		frmListaDeFuncionrios.getContentPane().add(editUsuario);
 		
-		JLabel editSenha = new JLabel("Senha:");
 		editSenha.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		editSenha.setBounds(20, 420, 46, 14);
 		frmListaDeFuncionrios.getContentPane().add(editSenha);
@@ -196,14 +232,22 @@ public class ViewListaFunc {
 		textField_6.setBounds(86, 418, 310, 20);
 		frmListaDeFuncionrios.getContentPane().add(textField_6);
 		
-		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.setBounds(20, 460, 187, 23);
 		frmListaDeFuncionrios.getContentPane().add(btnSalvar);
 		
-		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBounds(217, 460, 179, 23);
 		frmListaDeFuncionrios.getContentPane().add(btnCancelar);
 		
+		btnSalvar.setEnabled(false);
+		btnCancelar.setEnabled(false);
+		btnAltera.setEnabled(false);
+		btnRemove.setEnabled(false);
+		editNome.setEnabled(false);
+		editCPF.setEnabled(false);
+		editCargo.setEnabled(false);
+		editTelefone.setEnabled(false);
+		editUsuario.setEnabled(false);
+		editSenha.setEnabled(false);
 
 	}
 }

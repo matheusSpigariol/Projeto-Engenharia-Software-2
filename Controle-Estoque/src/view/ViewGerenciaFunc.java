@@ -60,12 +60,9 @@ public class ViewGerenciaFunc {
 		
 		JButton btnNewButton = new JButton("Página Inicial");
 		btnNewButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				try {
-					ViewPrincipal.main(null);
-				} catch (Exception e1) {
-					e1.printStackTrace();
-				}
+				frame.setVisible(false);
 			}
 		});
 		
