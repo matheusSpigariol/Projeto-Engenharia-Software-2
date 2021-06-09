@@ -21,7 +21,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
 
-public class GerenciaFuncionario {
+public class ViewGerenciaFunc {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -30,14 +30,11 @@ public class GerenciaFuncionario {
 	 * Launch the application.
 	 * @throws Exception 
 	 */
-	public static void main(String[] args) throws Exception {
-		ConnectionFactory con = new ConnectionFactory();
-		con.conexao();
+	public void rodaJanela() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ViewPrincipal window = new ViewPrincipal();
-					window.frame.setVisible(true);
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -49,7 +46,7 @@ public class GerenciaFuncionario {
 	 * Create the application.
 	 * @wbp.parser.entryPoint
 	 */
-	public GerenciaFuncionario() {
+	public ViewGerenciaFunc() {
 		initialize();
 	}
 
@@ -64,18 +61,27 @@ public class GerenciaFuncionario {
 		JButton btnNewButton = new JButton("Página Inicial");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					ViewPrincipal.main(null);
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		
 		JButton btnNewButton_2 = new JButton("Adicionar Funcionario");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ViewFuncionario vf1 = new ViewFuncionario();
+			    vf1.rodaJanela();
 			}
 		});
 		
 		JButton btnNewButton_3 = new JButton("Lista de Funcionarios");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ViewListaFunc vf2 = new ViewListaFunc();
+			    vf2.rodaJanela();
 			}
 		});
 		

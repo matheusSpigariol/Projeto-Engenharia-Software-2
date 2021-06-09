@@ -90,11 +90,11 @@ public class ViewPrincipal {
 			}
 		});
 		
-		JButton btnNewButton_5 = new JButton("Cadastrar Funcionario");
+		JButton btnNewButton_5 = new JButton("Gerenciar Funcionarios");
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ViewFuncionario vf1 = new ViewFuncionario();
-			     vf1.rodaJanela();
+				ViewGerenciaFunc vf1 = new ViewGerenciaFunc();
+			    vf1.rodaJanela();
 			}
 		});
 		

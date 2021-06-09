@@ -193,7 +193,7 @@ public class ViewFuncionario {
 				}
 				ModelFuncionario fun = new ModelFuncionario(String.valueOf(NomeInput.getText()), String.valueOf(CPFInput.getText()),
 						5, String.valueOf(CargoInput.getText()), String.valueOf(TelefoneInput.getText()),
-						String.valueOf(UserInput.getText()), String.valueOf(passwordField.getText()));
+						String.valueOf(UserInput.getText()), String.valueOf(passwordField.getPassword()));
 				int erro = new FuncionarioController().cadastrarFuncionario(fun);
 			    System.out.println(erro);
 
