@@ -79,6 +79,7 @@ public class ViewListaFunc {
 		});
 		
 		textField = new JTextField("Controle de Estoque");
+		textField.setEditable(false);
 		textField.setBounds(0, 0, 424, 20);
 		textField.setBackground(Color.ORANGE);
 		textField.setHorizontalAlignment(SwingConstants.CENTER);

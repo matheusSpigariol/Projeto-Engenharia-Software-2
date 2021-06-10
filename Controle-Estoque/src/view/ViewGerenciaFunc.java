@@ -83,6 +83,7 @@ public class ViewGerenciaFunc {
 		});
 		
 		textField = new JTextField("Controle de Estoque");
+		textField.setEditable(false);
 		textField.setBackground(Color.ORANGE);
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setColumns(10);

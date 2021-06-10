@@ -1,9 +1,5 @@
 /.metadata/
-/.gitignore
-/assets/
-/conexaojdbc/
 /controller/
 /dao/
 /model/
-/mysql-connector-java-8.0.25.jar
 /view/
