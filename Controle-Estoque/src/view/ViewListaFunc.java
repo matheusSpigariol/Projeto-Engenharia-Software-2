@@ -8,6 +8,11 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
+
+import dao.FuncionarioDAO;
+import model.ModelFuncionario;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -158,7 +163,36 @@ public class ViewListaFunc {
 		scrollPane.setBounds(10, 56, 404, 139);
 		frmListaDeFuncionrios.getContentPane().add(scrollPane);
 		
-		table = new JTable(dados,colunas);
+		//09/06/2021 - Antonio, Matheus e Rapha
+		DefaultTableModel model = new DefaultTableModel(); 
+		JTable table = new JTable(model); 
+		table.setEnabled(false);
+		
+		FuncionarioDAO fdao = new FuncionarioDAO();
+		
+		model.addColumn("ID"); 
+		model.addColumn("Nome"); 
+		model.addColumn("CPF"); 
+		model.addColumn("Cargo"); 
+		model.addColumn("Telefone"); 
+		model.addColumn("Usuario"); 
+		model.addColumn("Senha"); 
+	
+		for(ModelFuncionario f: fdao.getAllFuncionario()) {
+			
+			model.addRow(new Object[] {
+					f.getId(),
+					f.getNome(),
+					f.getCpf(),
+					f.getCargo(),
+					f.getTelefone(),
+					f.getUsuario(),
+					f.getSenha()
+			});
+		}
+		//acaba aq, resto pro prox sprint (clown emoji)
+		//TO-DO -> remover opção de editar as linhas da tabela! 
+		
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -172,7 +206,7 @@ public class ViewListaFunc {
 		});
 		scrollPane.setViewportView(table);
 		
-		JLabel lblNewLabel = new JLabel("-----Lista de Funcion\u00E1rios------");
+		JLabel lblNewLabel = new JLabel("-----Lista de Funcionarios------");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel.setBounds(99, 31, 237, 14);
 		frmListaDeFuncionrios.getContentPane().add(lblNewLabel);
