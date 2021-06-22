@@ -35,6 +35,7 @@ public class ViewListaFunc {
 	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
+	private DefaultTableModel model;
 
 	/**
 	 * Launch the application.
@@ -64,6 +65,22 @@ public class ViewListaFunc {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		//Inicialização da table------------------------
+		model = new DefaultTableModel(); 
+		table = new JTable(model); 
+		table.setEnabled(false);
+		
+		FuncionarioDAO fdao = new FuncionarioDAO();
+		
+		model.addColumn("ID"); 
+		model.addColumn("Nome"); 
+		model.addColumn("CPF"); 
+		model.addColumn("Cargo"); 
+		model.addColumn("Telefone"); 
+		model.addColumn("Usuario"); 
+		model.addColumn("Senha"); 
+		//-------------------------------------------------
+		
 		frmListaDeFuncionrios = new JFrame();
 		frmListaDeFuncionrios.setTitle("Lista de Funcion\u00E1rios");
 		frmListaDeFuncionrios.setBounds(100, 100, 440, 600);
@@ -143,6 +160,37 @@ public class ViewListaFunc {
 		JButton btnBusca = new JButton("Buscar");
 		btnBusca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				model.setRowCount(0); //limpa a tabela
+				
+				if(textoBusca.getText().equals("")) {
+					for(ModelFuncionario f: fdao.getAllFuncionario()) {
+						
+						model.addRow(new Object[] {
+								f.getId(),
+								f.getNome(),
+								f.getCpf(),
+								f.getCargo(),
+								f.getTelefone(),
+								f.getUsuario(),
+								f.getSenha()
+						});
+					}
+				}else {
+					for(ModelFuncionario f: fdao.getPesquisa(textoBusca.getText())) {
+						
+						model.addRow(new Object[] {
+								f.getId(),
+								f.getNome(),
+								f.getCpf(),
+								f.getCargo(),
+								f.getTelefone(),
+								f.getUsuario(),
+								f.getSenha()
+						});
+					}
+				}
+				
 			}
 		});
 		btnBusca.setBounds(10, 215, 111, 23);
@@ -165,19 +213,6 @@ public class ViewListaFunc {
 		frmListaDeFuncionrios.getContentPane().add(scrollPane);
 		
 		//09/06/2021 - Antonio, Matheus e Rapha
-		DefaultTableModel model = new DefaultTableModel(); 
-		JTable table = new JTable(model); 
-		table.setEnabled(false);
-		
-		FuncionarioDAO fdao = new FuncionarioDAO();
-		
-		model.addColumn("ID"); 
-		model.addColumn("Nome"); 
-		model.addColumn("CPF"); 
-		model.addColumn("Cargo"); 
-		model.addColumn("Telefone"); 
-		model.addColumn("Usuario"); 
-		model.addColumn("Senha"); 
 	
 		for(ModelFuncionario f: fdao.getAllFuncionario()) {
 			

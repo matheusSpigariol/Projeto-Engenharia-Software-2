@@ -163,5 +163,45 @@ public class FuncionarioDAO {
 		}
 
 	}
+	
+	public ArrayList<ModelFuncionario> getPesquisa(String parametro) {
+		ArrayList<ModelFuncionario> funcionarios = new ArrayList<ModelFuncionario>();
+		String sql = "SELECT * FROM funcionario WHERE id='"+parametro+"'"+
+				"OR nome='"+parametro+"'"+
+				"OR cargo='"+parametro+"'"+
+				"OR telefone='"+parametro+"'"+
+				"OR cpf='"+parametro+"'";
+		Connection connection;
 
+		try {
+			connection = ConnectionFactory.createConnectionToMySQL();
+
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+
+			while(rs.next()) {
+
+				int id = rs.getInt("ID");
+				String nome = rs.getString("NOME");
+				String cpf = rs.getString("CPF");
+				String cargo = rs.getString("CARGO");
+				String telefone = rs.getString("TELEFONE");
+				String usuario = rs.getString("USUARIO");
+				String senha = rs.getString("SENHA");
+
+				funcionarios.add(new ModelFuncionario(nome, cpf, id, cargo, telefone, usuario, senha));
+
+			}
+
+			return funcionarios;
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+
+	}
+
+	
 }
