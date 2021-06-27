@@ -28,8 +28,6 @@ public class ViewListaFunc {
 	private JTextField textField;
 	private JTextField textoBusca;
 	private JTable table;
-	private final String colunas[] = { "Nome", "CPF", "Cargo", "Telefone", "Usuario", "Senha" };
-	private final String dados[][] = { { "Aqui", "é", "onde", "os", "dados", "ficarão" } };
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;

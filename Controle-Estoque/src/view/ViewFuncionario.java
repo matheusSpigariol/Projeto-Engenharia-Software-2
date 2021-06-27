@@ -182,7 +182,7 @@ public class ViewFuncionario {
 					if (ErrorText.isEmpty()) {
 						ErrorText = "Preencha a Senha do Funcionário ";
 					} else {
-						ErrorText += "\nPreencha o Senha do Funcionário";
+						ErrorText += "\nPreencha a Senha do Funcionário";
 					}
 				}
 				if (error == false) {

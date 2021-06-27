@@ -23,7 +23,7 @@ import javax.swing.JLabel;
 
 public class ViewPrincipal {
 
-	JFrame frame;
+	JFrame frmPginaInicial;
 	private JTextField textField;
 
 	/**
@@ -37,7 +37,7 @@ public class ViewPrincipal {
 			public void run() {
 				try {
 					ViewPrincipal window = new ViewPrincipal();
-					window.frame.setVisible(true);
+					window.frmPginaInicial.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -56,9 +56,10 @@ public class ViewPrincipal {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 440, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmPginaInicial = new JFrame();
+		frmPginaInicial.setTitle("P\u00E1gina Inicial");
+		frmPginaInicial.setBounds(100, 100, 440, 600);
+		frmPginaInicial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btnNewButton = new JButton("Página Inicial");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -123,7 +124,15 @@ public class ViewPrincipal {
 		lblNewLabel.setBounds(100, 0, 250, 250);
 		ViewPrincipal.getContentPane().add(lblNewLabel);/*/
 		
-		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		JButton btnNewButton_7 = new JButton("Gerenciar Produto");
+		btnNewButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ViewGerenciaProd vf1 = new ViewGerenciaProd();
+			    vf1.rodaJanela();
+			}
+		});
+		
+		GroupLayout groupLayout = new GroupLayout(frmPginaInicial.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addComponent(textField, GroupLayout.PREFERRED_SIZE, 424, GroupLayout.PREFERRED_SIZE)
@@ -133,14 +142,15 @@ public class ViewPrincipal {
 					.addGap(18)
 					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnNewButton_4, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnNewButton_5, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnNewButton_6, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE))
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(btnNewButton_1, GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+								.addComponent(btnNewButton_4, GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+								.addComponent(btnNewButton_5, GroupLayout.PREFERRED_SIZE, 110, Short.MAX_VALUE)
+								.addComponent(btnNewButton_3, GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+								.addComponent(btnNewButton_2, GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+								.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+								.addComponent(btnNewButton_6, GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+								.addComponent(btnNewButton_7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 							.addGap(60))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 195, GroupLayout.PREFERRED_SIZE)
@@ -168,14 +178,16 @@ public class ViewPrincipal {
 							.addGap(18)
 							.addComponent(btnNewButton_5)
 							.addGap(18)
+							.addComponent(btnNewButton_7)
+							.addGap(18)
 							.addComponent(btnNewButton_6)
-							.addGap(130))
+							.addGap(89))
 						.addComponent(panel, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 524, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel_1, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 524, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap())
 		);
-		frame.getContentPane().setLayout(groupLayout);
-		frame.getContentPane().setBackground(new Color(238,232,170));
+		frmPginaInicial.getContentPane().setLayout(groupLayout);
+		frmPginaInicial.getContentPane().setBackground(new Color(238,232,170));
 
 	}
 }
