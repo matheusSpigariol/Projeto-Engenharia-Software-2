@@ -10,9 +10,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
-import controller.FuncionarioController;
-import dao.FuncionarioDAO;
-import model.ModelFuncionario;
+import controller.ProdutoController;
+import dao.ProdutoDAO;
+import model.ModelProduto;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -70,7 +70,7 @@ public class ViewListaProd {
 		model = new DefaultTableModel();
 		table = new JTable(model);
 
-		//FuncionarioDAO fdao = new FuncionarioDAO();
+		ProdutoDAO pdao = new ProdutoDAO();
 
 		model.addColumn("ID");
 		model.addColumn("Nome");
@@ -105,7 +105,16 @@ public class ViewListaProd {
 		JButton btnRemove = new JButton("Remover");
 		btnRemove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//integra aí kkkk
+				int index = table.getSelectedRow();
+				int removeID = (int) table.getValueAt(index, 0);
+				ProdutoDAO p1 = new ProdutoDAO();
+				p1.excluiProduto(removeID);
+				model.setRowCount(0);
+				for (ModelProduto p : pdao.getAllProduto()) {
+
+					model.addRow(new Object[] { p.getId(), p.getNome(), p.getDescricao(), p.getQuantidade(),
+							p.getPreco(), p.getValidade(), p.getFornecedor() });
+				}
 			}
 		});
 		btnRemove.setBounds(153, 249, 111, 23);
@@ -126,10 +135,23 @@ public class ViewListaProd {
 		JLabel editValidade = new JLabel("Validade:");
 		JLabel editFornecedor = new JLabel("Fornecedor:");
 		JButton btnSalvar = new JButton("Salvar");
-		
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//integrar com banco, se vira kkkkk
+				int index = table.getSelectedRow();
+				int updateID = (int) table.getValueAt(index, 0);
+				ModelProduto prodAltera = new ModelProduto(String.valueOf(textField_1.getText()),
+						String.valueOf(textField_2.getText()), updateID, Integer.parseInt(textField_3.getText()),
+						Double.parseDouble(textField_4.getText()), String.valueOf(textField_5.getText()),
+						String.valueOf(textField_6.getText()));
+				int erro = new ProdutoController().editarProduto(prodAltera);
+				System.out.println(erro);
+				model.setRowCount(0);
+				for (ModelProduto p : pdao.getAllProduto()) {
+
+					model.addRow(new Object[] { p.getId(), p.getNome(), p.getDescricao(), p.getQuantidade(),
+							p.getPreco(), p.getValidade(), p.getFornecedor() });
+				}
+				btnSalvar.setEnabled(false);
 			}
 		});
 		JButton btnCancelar = new JButton("Cancelar");
@@ -142,6 +164,19 @@ public class ViewListaProd {
 				editValidade.setEnabled(false);
 				editFornecedor.setEnabled(false);
 				btnSalvar.setEnabled(false);
+				textField_1.setText("");
+				textField_2.setText("");
+				textField_3.setText("");
+				textField_4.setText("");
+				textField_5.setText("");
+				textField_6.setText("");
+				textoBusca.setText("");
+				model.setRowCount(0);
+				for (ModelProduto p : pdao.getAllProduto()) {
+
+					model.addRow(new Object[] { p.getId(), p.getNome(), p.getDescricao(), p.getQuantidade(),
+							p.getPreco(), p.getValidade(), p.getFornecedor() });
+				}
 			}
 		});
 
@@ -156,7 +191,21 @@ public class ViewListaProd {
 				editFornecedor.setEnabled(true);
 				btnSalvar.setEnabled(true);
 				btnCancelar.setEnabled(true);
-				//integra
+				int index = table.getSelectedRow();
+				if (index >= 0 && index < table.getRowCount()) {
+					String NOME = (String) table.getValueAt(index, 1);
+					String DESCRICAO = (String) table.getValueAt(index, 2);
+					int QUANTIDADE = (int) table.getValueAt(index, 3);
+					double PRECO = (double) table.getValueAt(index, 4);
+					String VALIDADE = (String) table.getValueAt(index, 5);
+					String FORNECEDOR = (String) table.getValueAt(index, 6);
+					textField_1.setText(NOME);
+					textField_2.setText(DESCRICAO);
+					textField_3.setText(String.valueOf(QUANTIDADE));
+					textField_4.setText(String.valueOf(PRECO));
+					textField_5.setText(VALIDADE);
+					textField_6.setText(FORNECEDOR);
+				}
 			}
 		});
 		btnAltera.setBounds(303, 249, 111, 23);
@@ -164,8 +213,22 @@ public class ViewListaProd {
 		JButton btnBusca = new JButton("Buscar");
 		btnBusca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				btnCancelar.setEnabled(true);
+				model.setRowCount(0); // limpa a tabela
 
-				//integra
+				if (textoBusca.getText().equals("")) {
+					for (ModelProduto p : pdao.getAllProduto()) {
+
+						model.addRow(new Object[] { p.getId(), p.getNome(), p.getDescricao(), p.getQuantidade(),
+								p.getPreco(), p.getValidade(), p.getFornecedor() });
+					}
+				} else {
+					for (ModelProduto p : pdao.getPesquisa(textoBusca.getText())) {
+
+						model.addRow(new Object[] { p.getId(), p.getNome(), p.getDescricao(), p.getQuantidade(),
+								p.getPreco(), p.getValidade(), p.getFornecedor() });
+					}
+				}
 
 			}
 		});
@@ -188,7 +251,11 @@ public class ViewListaProd {
 		scrollPane.setBounds(10, 56, 404, 139);
 		frmListaDeProdutos.getContentPane().add(scrollPane);
 
-		
+		for (ModelProduto p : pdao.getAllProduto()) {
+
+			model.addRow(new Object[] { p.getId(), p.getNome(), p.getDescricao(), p.getQuantidade(), p.getPreco(),
+					p.getValidade(), p.getFornecedor() });
+		}
 
 		table.addMouseListener(new MouseAdapter() {
 			@Override

@@ -13,6 +13,7 @@ import javax.swing.table.DefaultTableModel;
 import controller.FuncionarioController;
 import dao.FuncionarioDAO;
 import model.ModelFuncionario;
+import model.ModelProduto;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -163,6 +164,19 @@ public class ViewListaFunc {
 				editUsuario.setEnabled(false);
 				editSenha.setEnabled(false);
 				btnSalvar.setEnabled(false);
+				textField_1.setText("");
+				textField_2.setText("");
+				textField_3.setText("");
+				textField_4.setText("");
+				textField_5.setText("");
+				textField_6.setText("");
+				textoBusca.setText("");
+				model.setRowCount(0);
+				for (ModelFuncionario f : fdao.getAllFuncionario()) {
+
+					model.addRow(new Object[] { f.getId(), f.getNome(), f.getCpf(), f.getCargo(), f.getTelefone(),
+							f.getUsuario(), f.getSenha() });
+				}
 			}
 		});
 
@@ -199,7 +213,7 @@ public class ViewListaFunc {
 		JButton btnBusca = new JButton("Buscar");
 		btnBusca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				btnCancelar.setEnabled(true);
 				model.setRowCount(0); // limpa a tabela
 
 				if (textoBusca.getText().equals("")) {

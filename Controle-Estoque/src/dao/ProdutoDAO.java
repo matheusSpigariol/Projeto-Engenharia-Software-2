@@ -13,7 +13,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.ModelFuncionario;
 import model.ModelProduto;
 
 public class ProdutoDAO {
@@ -140,6 +139,47 @@ public class ProdutoDAO {
 	public ArrayList<ModelProduto> getAllProduto() {
 		ArrayList<ModelProduto> produtos = new ArrayList<ModelProduto>();
 		String sql = "SELECT * FROM produto";
+		Connection connection;
+
+		try {
+			connection = ConnectionFactory.createConnectionToMySQL();
+
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+
+			while(rs.next()) {
+
+				int id = rs.getInt("ID");
+				String nome = rs.getString("NOME");
+				String descricao = rs.getString("DESCRICAO");
+				int quantidade = rs.getInt("QUANTIDADE");
+				double preco = rs.getDouble("PRECO");
+				String validade = rs.getString("VALIDADE");
+				String fornecedor = rs.getString("FORNECEDOR");
+
+				produtos.add(new ModelProduto(nome, descricao, id, quantidade, preco, validade, fornecedor));
+
+			}
+
+			return produtos;
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+
+	}
+	
+	public ArrayList<ModelProduto> getPesquisa(String parametro) {
+		ArrayList<ModelProduto> produtos = new ArrayList<ModelProduto>();
+		String sql = "SELECT * FROM produto WHERE id='"+parametro+"'"+
+				"OR nome='"+parametro+"'"+
+				"OR descricao='"+parametro+"'"+
+				"OR quantidade='"+parametro+"'"+
+				"OR validade='"+parametro+"'"+
+				"OR preco='"+parametro+"'"+
+				"OR fornecedor='"+parametro+"'";
 		Connection connection;
 
 		try {

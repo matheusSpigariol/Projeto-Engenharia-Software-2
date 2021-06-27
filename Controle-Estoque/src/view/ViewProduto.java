@@ -12,7 +12,9 @@ import java.awt.Color;
 import javax.swing.SwingConstants;
 
 import controller.FuncionarioController;
+import controller.ProdutoController;
 import model.ModelFuncionario;
+import model.ModelProduto;
 
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -193,7 +195,11 @@ public class ViewProduto {
 				} else {
 					JOptionPane.showMessageDialog(null, ErrorText, "Erro", JOptionPane.ERROR_MESSAGE);
 				}
-				
+				ModelProduto prod = new ModelProduto(String.valueOf(NomeInput.getText()), String.valueOf(DescricaoInput.getText()),
+						1, Integer.parseInt(QuantInput.getText()), Double.parseDouble(PrecoInput.getText()),
+						String.valueOf(ValidadeInput.getText()), String.valueOf(FornecedorInput.getText()));
+				int errop = new ProdutoController().cadastrarProduto(prod);
+			    System.out.println(errop);
 
 			}
 		});

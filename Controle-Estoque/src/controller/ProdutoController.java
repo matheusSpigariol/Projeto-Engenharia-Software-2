@@ -36,5 +36,27 @@ public class ProdutoController {
 		}
 		
 	}
-
+	
+	public int editarProduto(ModelProduto p) {
+		//Precisa verificar se produto ja existe
+		if((p.getNome() == null || p.getNome() == "")){
+			return 1;
+		}else if((p.getDescricao() == null || p.getDescricao() == "")){
+			return 2;
+		}else if((p.getQuantidade() < 0 )){
+			return 3;
+		}else if((p.getPreco() <= 0)){
+			return 4;
+		}else if((p.getValidade() == null || p.getValidade() == "")){
+			return 5;
+		}else if((p.getFornecedor() == null || p.getFornecedor() == "")){
+			return 6;
+		}else if(new ProdutoDAO().editaProduto(p)){
+			return 0;
+		}else {
+			return 7;
+		}
+	}
+	
 }
+	
