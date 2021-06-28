@@ -84,7 +84,7 @@ public class ViewFornecedor {
 		});
 		
 		JButton btnNewButton_4 = new JButton("Cancelar");
-		btnNewButton_4.addActionListener(new ActionListener() {
+		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 			}

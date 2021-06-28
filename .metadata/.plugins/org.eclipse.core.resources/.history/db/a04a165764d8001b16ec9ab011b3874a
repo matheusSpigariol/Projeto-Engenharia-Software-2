@@ -169,7 +169,6 @@ public class ViewFoenecedorJuridica {
 		JButton btnNewButton_1 = new JButton("Cancelar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
 			}
 		});
 		

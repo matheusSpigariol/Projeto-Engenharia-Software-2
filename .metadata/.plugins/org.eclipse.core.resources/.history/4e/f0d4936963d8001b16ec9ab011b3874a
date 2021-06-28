@@ -103,8 +103,6 @@ public class ViewPrincipal {
 		JButton btnNewButton_6 = new JButton("Cadastrar Fornecedor");
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ViewFornecedor vf1 = new ViewFornecedor();
-			    vf1.rodaJanela();
 			}
 		});
 		

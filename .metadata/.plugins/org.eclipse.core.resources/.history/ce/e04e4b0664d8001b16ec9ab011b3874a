@@ -70,7 +70,7 @@ public class ViewFornecedor {
 		JButton btnNewButton_2 = new JButton("Pessoa Juridica");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ViewFoenecedorJuridica vf1 = new ViewFoenecedorJuridica();
+				ViewFuncionario vf1 = new ViewFuncionario();
 			    vf1.rodaJanela();
 			}
 		});
@@ -80,13 +80,6 @@ public class ViewFornecedor {
 			public void actionPerformed(ActionEvent e) {
 				ViewListaFunc vf2 = new ViewListaFunc();
 			    vf2.rodaJanela();
-			}
-		});
-		
-		JButton btnNewButton_4 = new JButton("Cancelar");
-		btnNewButton_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
 			}
 		});
 		
@@ -114,7 +107,6 @@ public class ViewFornecedor {
 						.addComponent(lblNewLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
 						.addComponent(btnNewButton_3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
 						.addComponent(btnNewButton_2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-						.addComponent(btnNewButton_4, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
 						.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE))
 					.addGap(115))
 		);
@@ -130,9 +122,6 @@ public class ViewFornecedor {
 					.addComponent(btnNewButton_2)
 					.addGap(18)
 					.addComponent(btnNewButton_3)
-					.addGap(18)
-					.addComponent(btnNewButton_4)
-					
 					.addGap(300))
 		);
 		frame.getContentPane().setLayout(groupLayout);

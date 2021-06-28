@@ -21,7 +21,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
 
-public class ViewFoenecedorJuridica {
+public class ViewFornecedorPFisica {
 
 	private JFrame frame;
 	private JTextField txtControleDeEstoque;
@@ -39,8 +39,7 @@ public class ViewFoenecedorJuridica {
 	private JTextField txtSite;
 	private JTextField txtCpf;
 	private JTextField txtObservacao;
-	private JTextField txtRazaoSocial;
-	private JTextField txtInscricaoEstadual;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -62,7 +61,7 @@ public class ViewFoenecedorJuridica {
 	 * Create the application.
 	 * @wbp.parser.entryPoint
 	 */
-	public ViewFoenecedorJuridica() {
+	public ViewFornecedorPFisica() {
 		initialize();
 	}
 
@@ -87,7 +86,7 @@ public class ViewFoenecedorJuridica {
 		
 		txtNome = new JTextField();
 		txtNome.setHorizontalAlignment(SwingConstants.CENTER);
-		txtNome.setText("Nome Fantasia");
+		txtNome.setText("Nome");
 		txtNome.setColumns(10);
 		
 		txtCategoria = new JTextField();
@@ -147,7 +146,7 @@ public class ViewFoenecedorJuridica {
 		
 		txtCpf = new JTextField();
 		txtCpf.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCpf.setText("CNPJ");
+		txtCpf.setText("CPF");
 		txtCpf.setColumns(10);
 		
 		txtObservacao = new JTextField();
@@ -157,21 +156,7 @@ public class ViewFoenecedorJuridica {
 		
 		JButton btnNewButton = new JButton("Cadastrar");
 		
-		txtRazaoSocial = new JTextField();
-		txtRazaoSocial.setHorizontalAlignment(SwingConstants.CENTER);
-		txtRazaoSocial.setText("Razao Social");
-		txtRazaoSocial.setColumns(10);
-		
-		txtInscricaoEstadual = new JTextField();
-		txtInscricaoEstadual.setText("Inscricao Estadual");
-		txtInscricaoEstadual.setColumns(10);
-		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-			}
-		});
+		btnNewButton_1 = new JButton("Cancelar");
 		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
@@ -179,60 +164,54 @@ public class ViewFoenecedorJuridica {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addComponent(txtControleDeEstoque, GroupLayout.PREFERRED_SIZE, 424, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(4)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(4)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(txtNome, GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(txtCpf, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-									.addGap(18)
-									.addComponent(txtObservacao, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE))
+									.addComponent(txtCategoria, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE)
+									.addGap(16)
+									.addComponent(txtCep, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
 								.addGroup(groupLayout.createSequentialGroup()
 									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 										.addComponent(txtEndereco, GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
 										.addGroup(groupLayout.createSequentialGroup()
 											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-												.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-												.addComponent(txtBairro, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+												.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+												.addComponent(txtBairro, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
 											.addGap(18)
 											.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 												.addComponent(txtCidade, 84, 84, 84)
-												.addComponent(txtTelefone, 84, 84, 84))
-											.addGap(2))
-										.addComponent(txtSite, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE))
+												.addComponent(txtTelefone, 84, 84, 84))))
 									.addGap(18)
 									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(txtEstado)
-										.addComponent(txtNumero)
 										.addGroup(groupLayout.createSequentialGroup()
 											.addPreferredGap(ComponentPlacement.RELATED)
-											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-												.addComponent(txtInscricaoEstadual, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-												.addComponent(txtCelular, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)))))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-										.addComponent(txtNome, Alignment.LEADING)
-										.addComponent(txtCategoria, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))
-									.addGap(16)
-									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-										.addComponent(txtRazaoSocial, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-										.addComponent(txtCep, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)))))
+											.addComponent(txtCelular, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
+										.addComponent(txtEstado)
+										.addComponent(txtNumero))))
+							.addGap(28))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-							.addGap(198)
-							.addComponent(btnNewButton_1, GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)))
-					.addGap(28))
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(txtSite)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, 194, GroupLayout.PREFERRED_SIZE)
+									.addGap(18)
+									.addComponent(txtObservacao, GroupLayout.PREFERRED_SIZE, 194, GroupLayout.PREFERRED_SIZE))
+								.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+									.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addGap(198)
+									.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)))
+							.addGap(24))))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addComponent(txtControleDeEstoque, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addGap(76)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtRazaoSocial, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtCategoria, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -252,17 +231,15 @@ public class ViewFoenecedorJuridica {
 						.addComponent(txtCelular, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtTelefone, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtSite, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtInscricaoEstadual, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addComponent(txtSite, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtObservacao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(183)
+					.addPreferredGap(ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnNewButton_1))
+						.addComponent(btnNewButton_1)
+						.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		frame.getContentPane().setLayout(groupLayout);

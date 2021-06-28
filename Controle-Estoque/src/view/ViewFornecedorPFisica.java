@@ -156,7 +156,12 @@ public class ViewFornecedorPFisica {
 		
 		JButton btnNewButton = new JButton("Cadastrar");
 		
-		btnNewButton_1 = new JButton("Cancelar");
+		JButton btnNewButton_1 = new JButton("Cancelar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
 		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
