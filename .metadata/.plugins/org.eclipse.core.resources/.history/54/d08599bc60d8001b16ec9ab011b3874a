@@ -59,7 +59,10 @@ public class ViewGerenciaFunc {
 		frame.setBounds(100, 100, 440, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		
+		JLabel IconLabel = new JLabel("");
+		IconLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		IconLabel.setIcon(new ImageIcon(ViewFuncionario.class.getResource("/assets/funcionario.png")));
+		IconLabel.setBounds(0, 0, 0, 0);
 		
 		JButton btnNewButton = new JButton("Página Inicial");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -96,18 +99,13 @@ public class ViewGerenciaFunc {
 		
 		JPanel panel_1 = new JPanel();
 		
-		//JLabel lblNewLabel = new JLabel("-------Gerencia de Funcionario-------");
-		//lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		JLabel lblNewLabel = new JLabel("-------Gerencia de Funcionario-------");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		/*/JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon(ViewFuncionario.class.getResource("C:\\Users\\ViníciusRozendoFerra\\Documents\\1Vinicius\\1Faculdade\\1Matérias\\prog\\EngSoftware2\\Projeto-Engenharia-Software-2")));
 		lblNewLabel.setBounds(100, 0, 250, 250);
 		ViewPrincipal.getContentPane().add(lblNewLabel);/*/
-		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon(ViewFuncionario.class.getResource("/assets/grupo.png")));
-		lblNewLabel.setBounds(0, 0, 0, 0);
 		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(

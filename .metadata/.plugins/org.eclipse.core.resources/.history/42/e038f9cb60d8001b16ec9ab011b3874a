@@ -106,7 +106,7 @@ public class ViewGerenciaFunc {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon(ViewFuncionario.class.getResource("/assets/grupo.png")));
+		lblNewLabel.setIcon(new ImageIcon(ViewFuncionario.class.getResource("/assets/funcionario.png")));
 		lblNewLabel.setBounds(0, 0, 0, 0);
 		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
