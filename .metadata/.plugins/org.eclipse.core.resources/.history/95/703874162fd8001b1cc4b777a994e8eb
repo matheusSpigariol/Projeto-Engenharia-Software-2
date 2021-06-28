@@ -1,0 +1,257 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.UIManager;
+
+import conexaojdbc.ConnectionFactory;
+
+import javax.swing.JPanel;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.FlowLayout;
+import javax.swing.JLabel;
+
+public class ViewFornecedorPFisica {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField txtPessoaFisica;
+	private JTextField txtNome;
+	private JTextField txtCategoria;
+	private JTextField txtEndereco;
+	private JTextField txtNumero;
+	private JTextField txtBairro;
+	private JTextField txtCidade;
+	private JTextField txtEstado;
+	private JTextField txtCep;
+	private JTextField txtEmail;
+	private JTextField txtTelefone;
+	private JTextField txtCelular;
+	private JTextField txtSite;
+	private JTextField txtCpf;
+	private JTextField txtObservacao;
+
+	/**
+	 * Launch the application.
+	 * @throws Exception 
+	 */
+	public void rodaJanela() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 * @wbp.parser.entryPoint
+	 */
+	public ViewFornecedorPFisica() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 440, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		textField = new JTextField("Controle de Estoque");
+		textField.setEditable(false);
+		textField.setBackground(Color.ORANGE);
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
+		textField.setColumns(10);
+		/*/JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setIcon(new ImageIcon(ViewFuncionario.class.getResource("C:\\Users\\ViníciusRozendoFerra\\Documents\\1Vinicius\\1Faculdade\\1Matérias\\prog\\EngSoftware2\\Projeto-Engenharia-Software-2")));
+		lblNewLabel.setBounds(100, 0, 250, 250);
+		ViewPrincipal.getContentPane().add(lblNewLabel);/*/
+		
+		txtPessoaFisica = new JTextField();
+		txtPessoaFisica.setBackground(Color.ORANGE);
+		txtPessoaFisica.setHorizontalAlignment(SwingConstants.CENTER);
+		txtPessoaFisica.setText("Pessoa Fisica");
+		txtPessoaFisica.setColumns(10);
+		
+		txtNome = new JTextField();
+		txtNome.setHorizontalAlignment(SwingConstants.CENTER);
+		txtNome.setText("Nome");
+		txtNome.setColumns(10);
+		
+		txtCategoria = new JTextField();
+		txtCategoria.setText("Categoria");
+		txtCategoria.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCategoria.setColumns(10);
+		
+		txtEndereco = new JTextField();
+		txtEndereco.setText("Endereco");
+		txtEndereco.setHorizontalAlignment(SwingConstants.CENTER);
+		txtEndereco.setColumns(10);
+		
+		txtNumero = new JTextField();
+		txtNumero.setHorizontalAlignment(SwingConstants.CENTER);
+		txtNumero.setText("numero");
+		txtNumero.setColumns(10);
+		
+		txtBairro = new JTextField();
+		txtBairro.setText("Bairro");
+		txtBairro.setHorizontalAlignment(SwingConstants.CENTER);
+		txtBairro.setColumns(10);
+		
+		txtCidade = new JTextField();
+		txtCidade.setText("Cidade");
+		txtCidade.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCidade.setColumns(10);
+		
+		txtEstado = new JTextField();
+		txtEstado.setHorizontalAlignment(SwingConstants.CENTER);
+		txtEstado.setText("Estado");
+		txtEstado.setColumns(10);
+		
+		txtCep = new JTextField();
+		txtCep.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCep.setText("CEP");
+		txtCep.setColumns(10);
+		
+		txtEmail = new JTextField();
+		txtEmail.setText("E-mail");
+		txtEmail.setHorizontalAlignment(SwingConstants.CENTER);
+		txtEmail.setColumns(10);
+		
+		txtTelefone = new JTextField();
+		txtTelefone.setText("Telefone");
+		txtTelefone.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTelefone.setColumns(10);
+		
+		txtCelular = new JTextField();
+		txtCelular.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCelular.setText("Celular");
+		txtCelular.setColumns(10);
+		
+		txtSite = new JTextField();
+		txtSite.setText("Site");
+		txtSite.setHorizontalAlignment(SwingConstants.CENTER);
+		txtSite.setColumns(10);
+		
+		txtCpf = new JTextField();
+		txtCpf.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCpf.setText("CPF");
+		txtCpf.setColumns(10);
+		
+		txtObservacao = new JTextField();
+		txtObservacao.setText("Observacao");
+		txtObservacao.setHorizontalAlignment(SwingConstants.CENTER);
+		txtObservacao.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Cadastrar");
+		
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addComponent(textField, GroupLayout.PREFERRED_SIZE, 424, GroupLayout.PREFERRED_SIZE)
+				.addComponent(txtPessoaFisica, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtNome, GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtCategoria, GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(txtCep, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtEndereco, GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(txtNumero, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtBairro, GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(txtCidade, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(txtEstado)
+					.addContainerGap())
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(txtTelefone, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(txtCelular, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtSite, GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(txtObservacao, GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(1)
+					.addComponent(txtPessoaFisica, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(txtCategoria, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtCep, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(txtEndereco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtNumero, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(txtBairro, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtCidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtEstado, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtTelefone, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtCelular, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addComponent(txtSite, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtObservacao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(220)
+					.addComponent(btnNewButton)
+					.addContainerGap())
+		);
+		frame.getContentPane().setLayout(groupLayout);
+		frame.getContentPane().setBackground(new Color(238,232,170));
+
+	}
+}
