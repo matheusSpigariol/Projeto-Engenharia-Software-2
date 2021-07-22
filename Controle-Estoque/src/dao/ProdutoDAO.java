@@ -18,7 +18,7 @@ import model.ModelProduto;
 public class ProdutoDAO {
 
 	public boolean CadastraProduto(ModelProduto produto) {
-		String sql = "INSERT INTO PRODUTO(NOME, DESCRICAO, ID, QUANTIDADE, PRECO, VALIDADE, FORNECEDOR) "
+		String sql = "INSERT INTO PRODUTO(NOME, TIPO_PRODUTO, ID, QUANTIDADE, PRECO, VALIDADE, FORNECEDOR) "
 				+ "VALUES(?, ?, ?, ?, ?,?,?)";
 		Connection connection;
 		
@@ -26,7 +26,7 @@ public class ProdutoDAO {
 			connection = ConnectionFactory.createConnectionToMySQL();
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, produto.getNome());
-			statement.setString(2, produto.getDescricao());
+			statement.setString(2, produto.getTipoProduto());
 			statement.setInt(3, 0);			
 			statement.setInt(4, produto.getQuantidade());
 			statement.setDouble(5, produto.getPreco());
@@ -46,7 +46,7 @@ public class ProdutoDAO {
 	
 	public boolean editaProduto(ModelProduto produto) {
 
-		String sql = "UPDATE produto set NOME = ?, DESCRICAO = ?, QUANTIDADE = ?, PRECO = ?, VALIDADE = ?, FORNECEDOR = ? "
+		String sql = "UPDATE produto set NOME = ?, TIPO_PRODUTO = ?, QUANTIDADE = ?, PRECO = ?, VALIDADE = ?, FORNECEDOR = ? "
 				+ "WHERE ID = ?";
 		Connection connection;
 
@@ -55,7 +55,7 @@ public class ProdutoDAO {
 			PreparedStatement statement = connection.prepareStatement(sql);
 
 			statement.setString(1, produto.getNome());
-			statement.setString(2, produto.getDescricao());
+			statement.setString(2, produto.getTipoProduto());
 			statement.setInt(3, produto.getQuantidade());
 			statement.setDouble(4, produto.getPreco());
 			statement.setString(5, produto.getValidade());
@@ -115,7 +115,7 @@ public class ProdutoDAO {
 
 				int id = rs.getInt("ID");
 				String nome = rs.getString("NOME");
-				String descricao = rs.getString("DESCRICAO");
+				String descricao = rs.getString("TIPO_PRODUTO");
 				int quantidade = rs.getInt("QUANTIDADE");
 				double preco = rs.getDouble("PRECO");
 				String validade = rs.getString("VALIDADE");
@@ -151,13 +151,13 @@ public class ProdutoDAO {
 
 				int id = rs.getInt("ID");
 				String nome = rs.getString("NOME");
-				String descricao = rs.getString("DESCRICAO");
+				String tipo_produto = rs.getString("TIPO_PRODUTO");
 				int quantidade = rs.getInt("QUANTIDADE");
 				double preco = rs.getDouble("PRECO");
 				String validade = rs.getString("VALIDADE");
 				String fornecedor = rs.getString("FORNECEDOR");
 
-				produtos.add(new ModelProduto(nome, descricao, id, quantidade, preco, validade, fornecedor));
+				produtos.add(new ModelProduto(nome, tipo_produto, id, quantidade, preco, validade, fornecedor));
 
 			}
 
@@ -175,7 +175,7 @@ public class ProdutoDAO {
 		ArrayList<ModelProduto> produtos = new ArrayList<ModelProduto>();
 		String sql = "SELECT * FROM produto WHERE id='"+parametro+"'"+
 				"OR nome='"+parametro+"'"+
-				"OR descricao='"+parametro+"'"+
+				"OR tipo_produto='"+parametro+"'"+
 				"OR quantidade='"+parametro+"'"+
 				"OR validade='"+parametro+"'"+
 				"OR preco='"+parametro+"'"+
@@ -192,7 +192,7 @@ public class ProdutoDAO {
 
 				int id = rs.getInt("ID");
 				String nome = rs.getString("NOME");
-				String descricao = rs.getString("DESCRICAO");
+				String descricao = rs.getString("TIPO_PRODUTO");
 				int quantidade = rs.getInt("QUANTIDADE");
 				double preco = rs.getDouble("PRECO");
 				String validade = rs.getString("VALIDADE");

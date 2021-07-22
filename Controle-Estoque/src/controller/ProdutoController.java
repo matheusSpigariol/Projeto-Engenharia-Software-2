@@ -19,7 +19,7 @@ public class ProdutoController {
 		//Precisa verificar se produto ja existe
 		if((p.getNome() == null || p.getNome() == "")){
 			return 1;
-		}else if((p.getDescricao() == null || p.getDescricao() == "")){
+		}else if((p.getTipoProduto() == null || p.getTipoProduto() == "")){
 			return 2;
 		}else if((p.getQuantidade() < 0 )){
 			return 3;
@@ -41,7 +41,7 @@ public class ProdutoController {
 		//Precisa verificar se produto ja existe
 		if((p.getNome() == null || p.getNome() == "")){
 			return 1;
-		}else if((p.getDescricao() == null || p.getDescricao() == "")){
+		}else if((p.getTipoProduto() == null || p.getTipoProduto() == "")){
 			return 2;
 		}else if((p.getQuantidade() < 0 )){
 			return 3;

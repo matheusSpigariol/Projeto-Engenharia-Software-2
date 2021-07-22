@@ -2,17 +2,17 @@ package model;
 
 public class ModelProduto {
 	private String nome;
-	private String descricao;
+	private String tipoProduto;
 	private int id;
 	private int quantidade;
 	private double preco;
 	private String validade;
 	private String fornecedor;
 
-	public ModelProduto(String nome, String descricao, int id, int quantidade, double preco, String validade,
+	public ModelProduto(String nome, String tipoProduto, int id, int quantidade, double preco, String validade,
 			String fornecedor) {
 		this.nome = nome;
-		this.descricao = descricao;
+		this.setTipoProduto(tipoProduto);
 		this.id = id;
 		this.quantidade = quantidade;
 		this.preco = preco;
@@ -30,14 +30,6 @@ public class ModelProduto {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 
 	public int getId() {
@@ -78,6 +70,14 @@ public class ModelProduto {
 
 	public void setFornecedor(String fornecedor) {
 		this.fornecedor = fornecedor;
+	}
+
+	public String getTipoProduto() {
+		return tipoProduto;
+	}
+
+	public void setTipoProduto(String tipoProduto) {
+		this.tipoProduto = tipoProduto;
 	}
 
 }
