@@ -166,11 +166,11 @@ public class FuncionarioDAO {
 	
 	public ArrayList<ModelFuncionario> getPesquisa(String parametro) {
 		ArrayList<ModelFuncionario> funcionarios = new ArrayList<ModelFuncionario>();
-		String sql = "SELECT * FROM funcionario WHERE id='"+parametro+"'"+
-				"OR nome='"+parametro+"'"+
-				"OR cargo='"+parametro+"'"+
-				"OR telefone='"+parametro+"'"+
-				"OR cpf='"+parametro+"'";
+		String sql = "SELECT * FROM funcionario WHERE id LIKE '%"+parametro+"%'"+
+				"OR nome LIKE '%"+parametro+"%'"+
+				"OR cargo LIKE '%"+parametro+"%'"+
+				"OR telefone LIKE '%"+parametro+"%'"+
+				"OR cpf LIKE '%"+parametro+"%'";
 		Connection connection;
 
 		try {

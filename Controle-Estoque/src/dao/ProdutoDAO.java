@@ -174,12 +174,12 @@ public class ProdutoDAO {
 	public ArrayList<ModelProduto> getPesquisa(String parametro) {
 		ArrayList<ModelProduto> produtos = new ArrayList<ModelProduto>();
 		String sql = "SELECT * FROM produto WHERE id='"+parametro+"'"+
-				"OR nome='"+parametro+"'"+
-				"OR tipo_produto='"+parametro+"'"+
-				"OR quantidade='"+parametro+"'"+
-				"OR validade='"+parametro+"'"+
-				"OR preco='"+parametro+"'"+
-				"OR fornecedor='"+parametro+"'";
+				"OR nome LIKE '%"+parametro+"%'"+
+				"OR tipo_produto LIKE '%"+parametro+"%'"+
+				"OR quantidade LIKE '%"+parametro+"%'"+
+				"OR validade LIKE '%"+parametro+"%'"+
+				"OR preco LIKE '%"+parametro+"%'"+
+				"OR fornecedor LIKE '%"+parametro+"%'";
 		Connection connection;
 
 		try {
