@@ -20,6 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
+import java.awt.Font;
 
 public class ViewFoenecedorJuridica {
 
@@ -39,8 +40,24 @@ public class ViewFoenecedorJuridica {
 	private JTextField txtSite;
 	private JTextField txtCpf;
 	private JTextField txtObservacao;
-	private JTextField txtRazaoSocial;
-	private JTextField txtInscricaoEstadual;
+	private JButton btnNewButton_1;
+	private JLabel lblCategoria;
+	private JLabel lblCep;
+	private JLabel lblEndereo;
+	private JLabel lblNumero;
+	private JLabel lblEndereo_1;
+	private JLabel lblEndereo_2;
+	private JLabel lblEstado;
+	private JLabel lblEmail;
+	private JLabel lblTelefone;
+	private JLabel lblCelular;
+	private JLabel lblSite;
+	private JLabel lblCpf;
+	private JLabel lblObservacao;
+	private JTextField textField;
+	private JLabel lblRazaoSocial;
+	private JTextField textField_1;
+	private JLabel lblSite_1;
 
 	/**
 	 * Launch the application.
@@ -74,7 +91,7 @@ public class ViewFoenecedorJuridica {
 		frame.setBounds(100, 100, 440, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		txtControleDeEstoque = new JTextField("Controle de Estoque - Pessoa Fisica");
+		txtControleDeEstoque = new JTextField("Controle de Estoque - Pessoa Juridica");
 		txtControleDeEstoque.setEditable(false);
 		txtControleDeEstoque.setBackground(Color.ORANGE);
 		txtControleDeEstoque.setHorizontalAlignment(SwingConstants.CENTER);
@@ -87,84 +104,61 @@ public class ViewFoenecedorJuridica {
 		
 		txtNome = new JTextField();
 		txtNome.setHorizontalAlignment(SwingConstants.CENTER);
-		txtNome.setText("Nome Fantasia");
 		txtNome.setColumns(10);
 		
 		txtCategoria = new JTextField();
 		txtCategoria.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCategoria.setText("Categoria");
 		txtCategoria.setColumns(10);
 		
 		txtCep = new JTextField();
 		txtCep.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCep.setText("CEP");
 		txtCep.setColumns(10);
 		
 		txtEndereco = new JTextField();
 		txtEndereco.setHorizontalAlignment(SwingConstants.CENTER);
-		txtEndereco.setText("Endereco");
 		txtEndereco.setColumns(10);
 		
 		txtNumero = new JTextField();
 		txtNumero.setHorizontalAlignment(SwingConstants.CENTER);
-		txtNumero.setText("numero");
 		txtNumero.setColumns(10);
 		
 		txtEstado = new JTextField();
 		txtEstado.setHorizontalAlignment(SwingConstants.CENTER);
-		txtEstado.setText("Estado");
 		txtEstado.setColumns(10);
 		
 		txtCidade = new JTextField();
 		txtCidade.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCidade.setText("Cidade");
 		txtCidade.setColumns(10);
 		
 		txtBairro = new JTextField();
 		txtBairro.setHorizontalAlignment(SwingConstants.CENTER);
-		txtBairro.setText("Bairro");
 		txtBairro.setColumns(10);
 		
 		txtEmail = new JTextField();
 		txtEmail.setHorizontalAlignment(SwingConstants.CENTER);
-		txtEmail.setText("E-mail");
 		txtEmail.setColumns(10);
 		
 		txtCelular = new JTextField();
 		txtCelular.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCelular.setText("Celular");
 		txtCelular.setColumns(10);
 		
 		txtTelefone = new JTextField();
 		txtTelefone.setHorizontalAlignment(SwingConstants.CENTER);
-		txtTelefone.setText("Telefone");
 		txtTelefone.setColumns(10);
 		
 		txtSite = new JTextField();
 		txtSite.setHorizontalAlignment(SwingConstants.CENTER);
-		txtSite.setText("Site");
 		txtSite.setColumns(10);
 		
 		txtCpf = new JTextField();
 		txtCpf.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCpf.setText("CNPJ");
 		txtCpf.setColumns(10);
 		
 		txtObservacao = new JTextField();
 		txtObservacao.setHorizontalAlignment(SwingConstants.CENTER);
-		txtObservacao.setText("Observacao");
 		txtObservacao.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Cadastrar");
-		
-		txtRazaoSocial = new JTextField();
-		txtRazaoSocial.setHorizontalAlignment(SwingConstants.CENTER);
-		txtRazaoSocial.setText("Razao Social");
-		txtRazaoSocial.setColumns(10);
-		
-		txtInscricaoEstadual = new JTextField();
-		txtInscricaoEstadual.setText("Inscricao Estadual");
-		txtInscricaoEstadual.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("Cancelar");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -173,96 +167,241 @@ public class ViewFoenecedorJuridica {
 			}
 		});
 		
+		JLabel editNome = new JLabel("Nome Fantasia:");
+		editNome.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		editNome.setEnabled(false);
+		
+		lblCategoria = new JLabel("Categoria:");
+		lblCategoria.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblCategoria.setEnabled(false);
+		
+		lblCep = new JLabel("CEP:");
+		lblCep.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblCep.setEnabled(false);
+		
+		lblEndereo = new JLabel("Endere\u00E7o:");
+		lblEndereo.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblEndereo.setEnabled(false);
+		
+		lblNumero = new JLabel("Numero:");
+		lblNumero.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNumero.setEnabled(false);
+		
+		lblEndereo_1 = new JLabel("Bairro:");
+		lblEndereo_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblEndereo_1.setEnabled(false);
+		
+		lblEndereo_2 = new JLabel("Cidade:");
+		lblEndereo_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblEndereo_2.setEnabled(false);
+		
+		lblEstado = new JLabel("Estado:");
+		lblEstado.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblEstado.setEnabled(false);
+		
+		lblEmail = new JLabel("E-mail:");
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblEmail.setEnabled(false);
+		
+		lblTelefone = new JLabel("Telefone:");
+		lblTelefone.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblTelefone.setEnabled(false);
+		
+		lblCelular = new JLabel("Celular:");
+		lblCelular.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblCelular.setEnabled(false);
+		
+		lblSite = new JLabel("Site:");
+		lblSite.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblSite.setEnabled(false);
+		
+		lblCpf = new JLabel("CNPJ:");
+		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblCpf.setEnabled(false);
+		
+		lblObservacao = new JLabel("Observacao:");
+		lblObservacao.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblObservacao.setEnabled(false);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		
+		lblRazaoSocial = new JLabel("Razao Social:");
+		lblRazaoSocial.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblRazaoSocial.setEnabled(false);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		
+		lblSite_1 = new JLabel("Insc Est:");
+		lblSite_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblSite_1.setEnabled(false);
+		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addComponent(txtControleDeEstoque, GroupLayout.PREFERRED_SIZE, 424, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(4)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(txtEndereco, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(txtCpf, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-									.addGap(18)
-									.addComponent(txtObservacao, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-										.addComponent(txtEndereco, GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
-										.addGroup(groupLayout.createSequentialGroup()
-											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-												.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-												.addComponent(txtBairro, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
-											.addGap(18)
-											.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-												.addComponent(txtCidade, 84, 84, 84)
-												.addComponent(txtTelefone, 84, 84, 84))
-											.addGap(2))
-										.addComponent(txtSite, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE))
-									.addGap(18)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(txtEstado)
-										.addComponent(txtNumero)
-										.addGroup(groupLayout.createSequentialGroup()
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-												.addComponent(txtInscricaoEstadual, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-												.addComponent(txtCelular, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)))))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-										.addComponent(txtNome, Alignment.LEADING)
-										.addComponent(txtCategoria, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))
-									.addGap(16)
-									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-										.addComponent(txtRazaoSocial, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-										.addComponent(txtCep, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)))))
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(txtBairro, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblEndereo_1, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(txtCidade, GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+										.addComponent(lblEndereo_2, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)))))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-							.addGap(198)
-							.addComponent(btnNewButton_1, GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)))
+							.addComponent(lblEndereo, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(lblEstado, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtNumero, GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+						.addComponent(lblNumero, GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+						.addComponent(txtEstado, 0, 0, Short.MAX_VALUE))
 					.addGap(28))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(4)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblCpf, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())
+						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+							.addGroup(groupLayout.createSequentialGroup()
+								.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+								.addGap(198)
+								.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
+								.addGap(24))
+							.addGroup(groupLayout.createSequentialGroup()
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+									.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+										.addComponent(lblCategoria, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
+										.addComponent(lblCep, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+										.addGap(159))
+									.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+										.addPreferredGap(ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
+										.addComponent(txtCep, GroupLayout.PREFERRED_SIZE, 195, GroupLayout.PREFERRED_SIZE))
+									.addGroup(groupLayout.createSequentialGroup()
+										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+											.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+												.addComponent(txtNome, Alignment.LEADING)
+												.addComponent(txtCategoria, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
+											.addComponent(editNome))
+										.addGap(18)
+										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+											.addComponent(lblRazaoSocial, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+											.addComponent(textField, GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))))
+								.addGap(28))
+							.addGroup(groupLayout.createSequentialGroup()
+								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+									.addGroup(groupLayout.createSequentialGroup()
+										.addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, 194, GroupLayout.PREFERRED_SIZE)
+										.addGap(18)
+										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+											.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+												.addComponent(lblObservacao, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+												.addGap(96))
+											.addComponent(txtObservacao, GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)))
+									.addGroup(groupLayout.createSequentialGroup()
+										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+											.addGroup(groupLayout.createSequentialGroup()
+												.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+													.addComponent(txtSite, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+													.addGroup(groupLayout.createSequentialGroup()
+														.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+															.addComponent(lblEmail, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+															.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+															.addComponent(lblTelefone, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+															.addComponent(txtTelefone, 84, 84, 84))))
+												.addPreferredGap(ComponentPlacement.RELATED))
+											.addGroup(groupLayout.createSequentialGroup()
+												.addComponent(lblSite, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+												.addGap(297)))
+										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+											.addComponent(lblSite_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(lblCelular, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
+											.addComponent(txtCelular, GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+											.addComponent(textField_1, 0, 0, Short.MAX_VALUE))))
+								.addGap(28)))))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addComponent(txtControleDeEstoque, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(76)
+					.addGap(56)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblRazaoSocial, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+						.addComponent(editNome))
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtRazaoSocial, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblCep, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblCategoria, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE))
+					.addGap(4)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtCategoria, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtCep, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblEndereo, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNumero, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtEndereco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtNumero, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtCidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblEndereo_1, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblEstado, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblEndereo_2, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtBairro, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtEstado, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
+						.addComponent(txtEstado, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtCidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(15)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblEmail, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblTelefone, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblCelular, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtCelular, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtTelefone, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtTelefone, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtCelular, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(18)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblSite, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblSite_1, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtSite, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtInscricaoEstadual, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
+						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(14)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblCpf, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblObservacao, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtObservacao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(183)
+					.addGap(86)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnNewButton_1))
+						.addComponent(btnNewButton_1)
+						.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		frame.getContentPane().setLayout(groupLayout);
