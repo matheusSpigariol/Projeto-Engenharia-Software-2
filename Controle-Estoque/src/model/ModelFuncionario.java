@@ -81,6 +81,4 @@ public class ModelFuncionario {
 		this.senha = senha;
 	}
 	
-	
-
 }
