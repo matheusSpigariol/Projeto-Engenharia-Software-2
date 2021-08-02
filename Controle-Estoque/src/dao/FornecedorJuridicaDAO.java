@@ -23,7 +23,7 @@ public class FornecedorJuridicaDAO {
 			statement.setString(2, fornecedorJuridica.getCategoria());
 			statement.setString(4, fornecedorJuridica.getCep());
 			statement.setString(5, fornecedorJuridica.getEndereco());
-			//statement.setInt(6, fornecedorJuridica.getNumero());????????????????????????????????????????????
+			statement.setInt(6, fornecedorJuridica.getNumero());
 			statement.setString(7, fornecedorJuridica.getEstado());
 			statement.setString(1, fornecedorJuridica.getCidade());
 			statement.setString(2, fornecedorJuridica.getBairro());

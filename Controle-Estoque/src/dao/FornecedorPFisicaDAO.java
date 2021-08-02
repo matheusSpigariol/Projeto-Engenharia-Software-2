@@ -13,7 +13,7 @@ public class FornecedorPFisicaDAO {
 
 		String sql = "INSERT INTO fornecedorJuridica(NOME, CATEGORIA,  CEP, ENDERECO, NUMERO, "
 				+ "ESTADO, CIDADE, BAIRRO, EMAIL, TELEFONE, CELULAR, SITE, CPF, OBSERVACAO) "
-				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		Connection connection;
 
 		try {
@@ -23,7 +23,7 @@ public class FornecedorPFisicaDAO {
 			statement.setString(2, fornecedorPFisica.getCategoria());
 			statement.setString(4, fornecedorPFisica.getCep());
 			statement.setString(5, fornecedorPFisica.getEndereco());
-			//statement.setInt(6, fornecedorPFisica.getNumero());????????????????????????????????????????????
+			statement.setInt(6, fornecedorPFisica.getNumero());
 			statement.setString(7, fornecedorPFisica.getEstado());
 			statement.setString(1, fornecedorPFisica.getCidade());
 			statement.setString(2, fornecedorPFisica.getBairro());

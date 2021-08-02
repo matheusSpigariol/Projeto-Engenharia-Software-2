@@ -43,8 +43,8 @@ public class FornecedorPFisicaController{
 			return 3;
 		}else if((f.getEndereco() == null || f.getEndereco() == "")){
 			return 4;
-		//}else if((f.getNumero() == null || f.getNumero() == "")){?????????????????????????????????
-			//return 5;
+		}else if((f.getNumero() < 0)){
+			return 5;
 		}else if((f.getEstado() == null || f.getEstado() == "")){
 			return 6;
 		}else if((f.getCidade() == null || f.getCidade() == "")){

@@ -1,5 +1,3 @@
 /.metadata/
-/view/
-/model/
-/dao/
 /controller/
+/dao/
