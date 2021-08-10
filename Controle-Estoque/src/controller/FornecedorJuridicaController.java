@@ -32,7 +32,7 @@ public class FornecedorJuridicaController{
 	 * retorna 13 se observacao é null 
 	 * retorna 14 se razaoSocial é null 
 	 * retorna 15 se inscEst é null 
-	 * retorna 16 se DAO retorna falso
+	 * retorna 17 se DAO retorna falso
 	 */
 	
 	public int cadastrarFornecedorJuridica(ModelFornecedorJuridica f) {
@@ -67,10 +67,12 @@ public class FornecedorJuridicaController{
 			return 14;
 		}else if((f.getInscEst() == null || f.getInscEst() == "")){
 			return 15;
+		}else if((f.getId() < 0)){
+			return 16;
 		}else if(new FornecedorJuridicaDAO().cadastraFornecedorJuridica(f)){
 			return 0;
 		}else {
-			return 16;
+			return 17;
 		}
 	}
 }

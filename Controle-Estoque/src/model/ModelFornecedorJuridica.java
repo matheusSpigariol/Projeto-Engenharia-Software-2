@@ -16,11 +16,12 @@ public class ModelFornecedorJuridica {
 	private String cnpj;
 	private String observacao;
 	private String razaoSocial;
-	private String InscEst;
+	private String inscEst;
+	private int id;
 
 	public ModelFornecedorJuridica(String nomeFantasia, String categoria, String cep, String endereco, int numero, String estado,
 			String cidade, String bairro, String email, String telefone, String celular, String site, String cnpj, String observacao, 
-			String razaoSocial, String InscEst) {
+			String razaoSocial, String inscEst, int id) {
 		this.nomeFantasia = nomeFantasia;
 		this.categoria = categoria;
 		this.cep = cep;
@@ -36,7 +37,8 @@ public class ModelFornecedorJuridica {
 		this.cnpj = cnpj;
 		this.observacao = observacao;
 		this.razaoSocial = razaoSocial;
-		this.InscEst = InscEst;
+		this.inscEst = inscEst;
+		this.id = id;
 	}
 		
 	public ModelFornecedorJuridica() {
@@ -164,11 +166,18 @@ public class ModelFornecedorJuridica {
 	}
 
 	public String getInscEst() {
-		return InscEst;
+		return inscEst;
 	}
 
 	public void setInscEst(String inscEst) {
-		InscEst = inscEst;
+		this.inscEst = inscEst;
+	}
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

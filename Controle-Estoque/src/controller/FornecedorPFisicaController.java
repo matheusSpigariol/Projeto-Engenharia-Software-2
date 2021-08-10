@@ -33,7 +33,7 @@ public class FornecedorPFisicaController{
 	 * retorna 16 se DAO retorna falso
 	 */
 	
-	public int cadastrarFuncionario(ModelFornecedorPFisica f) {
+	public int cadastraFornecedorPFisica(ModelFornecedorPFisica f) {
 		//Precisa verificar se funcionario ja existe
 		if((f.getNome() == null || f.getNome() == "")){
 			return 1;
@@ -61,10 +61,12 @@ public class FornecedorPFisicaController{
 			return 12;
 		}else if((f.getObservacao() == null || f.getObservacao() == "")){
 			return 13;
+		}else if((f.getId() < 0)){
+			return 14;
 		}else if(new FornecedorPFisicaDAO().cadastraFornecedorPFisica(f)){
 			return 0;
 		}else {
-			return 14;
+			return 15;
 		}
 	}
 }

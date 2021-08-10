@@ -15,9 +15,10 @@ public class ModelFornecedorPFisica {
 	private String site;
 	private String cpf;
 	private String observacao;
+	private int id;
 
 	public ModelFornecedorPFisica(String nome, String categoria, String cep, String endereco, int numero, String estado,
-			String cidade, String bairro, String email, String telefone, String celular, String site, String cpf, String observacao) {
+			String cidade, String bairro, String email, String telefone, String celular, String site, String cpf, String observacao, int id) {
 		this.nome = nome;
 		this.categoria = categoria;
 		this.cep = cep;
@@ -32,6 +33,7 @@ public class ModelFornecedorPFisica {
 		this.site = site;
 		this.cpf = cpf;
 		this.observacao = observacao;
+		this.id = id;
 	}
 		
 	public ModelFornecedorPFisica() {
@@ -148,6 +150,13 @@ public class ModelFornecedorPFisica {
 	
 	public void setObservacao(String observacao) {
 			this.observacao = observacao;
+	}
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }
 

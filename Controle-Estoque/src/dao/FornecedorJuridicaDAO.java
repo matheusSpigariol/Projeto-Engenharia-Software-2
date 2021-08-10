@@ -11,9 +11,9 @@ import model.ModelFornecedorJuridica;
 public class FornecedorJuridicaDAO {
 	public boolean cadastraFornecedorJuridica(ModelFornecedorJuridica fornecedorJuridica) {
 
-		String sql = "INSERT INTO fornecedorJuridica(NOMEFANTASIA, CATEGORIA,  CEP, ENDERECO, NUMERO, "
-				+ "ESTADO, CIDADE, BAIRRO, EMAIL, TELEFONE, CELULAR, SITE, CNPJ, OBSERVACAO, RAZAOSOCIAL, INSCEST) "
-				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO fornecedorjuridica(NOMEFANTASIA, CATEGORIA,  CEP, ENDERECO, NUMERO, "
+				+ "ESTADO, CIDADE, BAIRRO, EMAIL, TELEFONE, CELULAR, SITE, CNPJ, OBSERVACAO, RAZAOSOCIAL, INSCEST, ID) "
+				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		Connection connection;
 
 		try {
@@ -21,20 +21,21 @@ public class FornecedorJuridicaDAO {
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, fornecedorJuridica.getNomeFantasia());
 			statement.setString(2, fornecedorJuridica.getCategoria());
-			statement.setString(4, fornecedorJuridica.getCep());
-			statement.setString(5, fornecedorJuridica.getEndereco());
-			statement.setInt(6, fornecedorJuridica.getNumero());
-			statement.setString(7, fornecedorJuridica.getEstado());
-			statement.setString(1, fornecedorJuridica.getCidade());
-			statement.setString(2, fornecedorJuridica.getBairro());
-			statement.setString(4, fornecedorJuridica.getEmail());
-			statement.setString(5, fornecedorJuridica.getTelefone());
-			statement.setString(7, fornecedorJuridica.getCelular());
-			statement.setString(1, fornecedorJuridica.getSite());
-			statement.setString(2, fornecedorJuridica.getCnpj());
-			statement.setString(4, fornecedorJuridica.getObservacao());
-			statement.setString(5, fornecedorJuridica.getRazaoSocial());
-			statement.setString(5, fornecedorJuridica.getInscEst());
+			statement.setString(3, fornecedorJuridica.getCep());
+			statement.setString(4, fornecedorJuridica.getEndereco());
+			statement.setInt(5, fornecedorJuridica.getNumero());
+			statement.setString(6, fornecedorJuridica.getEstado());
+			statement.setString(7, fornecedorJuridica.getCidade());
+			statement.setString(8, fornecedorJuridica.getBairro());
+			statement.setString(9, fornecedorJuridica.getEmail());
+			statement.setString(10, fornecedorJuridica.getTelefone());
+			statement.setString(11, fornecedorJuridica.getCelular());
+			statement.setString(12, fornecedorJuridica.getSite());
+			statement.setString(13, fornecedorJuridica.getCnpj());
+			statement.setString(14, fornecedorJuridica.getObservacao());
+			statement.setString(15, fornecedorJuridica.getRazaoSocial());
+			statement.setString(16, fornecedorJuridica.getInscEst());
+			statement.setInt(17, 0);
 			statement.execute();
 			connection.close();
 			return true;

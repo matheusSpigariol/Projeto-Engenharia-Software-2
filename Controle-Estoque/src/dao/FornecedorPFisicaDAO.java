@@ -11,9 +11,9 @@ import model.ModelFornecedorPFisica;
 public class FornecedorPFisicaDAO {
 	public boolean cadastraFornecedorPFisica(ModelFornecedorPFisica fornecedorPFisica) {
 
-		String sql = "INSERT INTO fornecedorJuridica(NOME, CATEGORIA,  CEP, ENDERECO, NUMERO, "
-				+ "ESTADO, CIDADE, BAIRRO, EMAIL, TELEFONE, CELULAR, SITE, CPF, OBSERVACAO) "
-				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO fornecedorpfisica(NOME, CATEGORIA,  CEP, ENDERECO, NUMERO, "
+				+ "ESTADO, CIDADE, BAIRRO, EMAIL, TELEFONE, CELULAR, SITE, CPF, OBSERVACAO, ID) "
+				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		Connection connection;
 
 		try {
@@ -21,18 +21,19 @@ public class FornecedorPFisicaDAO {
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, fornecedorPFisica.getNome());
 			statement.setString(2, fornecedorPFisica.getCategoria());
-			statement.setString(4, fornecedorPFisica.getCep());
-			statement.setString(5, fornecedorPFisica.getEndereco());
-			statement.setInt(6, fornecedorPFisica.getNumero());
-			statement.setString(7, fornecedorPFisica.getEstado());
-			statement.setString(1, fornecedorPFisica.getCidade());
-			statement.setString(2, fornecedorPFisica.getBairro());
-			statement.setString(4, fornecedorPFisica.getEmail());
-			statement.setString(5, fornecedorPFisica.getTelefone());
-			statement.setString(7, fornecedorPFisica.getCelular());
-			statement.setString(1, fornecedorPFisica.getSite());
-			statement.setString(2, fornecedorPFisica.getCpf());
-			statement.setString(4, fornecedorPFisica.getObservacao());
+			statement.setString(3, fornecedorPFisica.getCep());
+			statement.setString(4, fornecedorPFisica.getEndereco());
+			statement.setInt(5, fornecedorPFisica.getNumero());
+			statement.setString(6, fornecedorPFisica.getEstado());
+			statement.setString(7, fornecedorPFisica.getCidade());
+			statement.setString(8, fornecedorPFisica.getBairro());
+			statement.setString(9, fornecedorPFisica.getEmail());
+			statement.setString(10, fornecedorPFisica.getTelefone());
+			statement.setString(11, fornecedorPFisica.getCelular());
+			statement.setString(12, fornecedorPFisica.getSite());
+			statement.setString(13, fornecedorPFisica.getCpf());
+			statement.setString(14, fornecedorPFisica.getObservacao());
+			statement.setInt(15, 0);
 			statement.execute();
 			connection.close();
 			return true;

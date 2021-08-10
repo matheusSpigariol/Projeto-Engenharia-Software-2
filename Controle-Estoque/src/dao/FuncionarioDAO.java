@@ -13,7 +13,7 @@ public class FuncionarioDAO {
 	public boolean cadastraFuncionario(ModelFuncionario funcionario) {
 
 		String sql = "INSERT INTO funcionario(NOME, CPF,  ID, CARGO, TELEFONE, USUARIO, SENHA) "
-				+ "VALUES(?, ?, ?, ?, ?,?,?)";
+				+ "VALUES(?, ?, ?, ?, ?, ?, ?)";
 		Connection connection;
 
 		try {

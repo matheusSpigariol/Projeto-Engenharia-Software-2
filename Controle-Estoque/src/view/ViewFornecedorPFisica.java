@@ -15,11 +15,15 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.UIManager;
 
 import conexaojdbc.ConnectionFactory;
+import controller.FornecedorPFisicaController;
+import model.ModelFornecedorPFisica;
 
 import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 
 public class ViewFornecedorPFisica {
@@ -155,6 +159,152 @@ public class ViewFornecedorPFisica {
 		txtObservacaoPF.setColumns(10);
 		
 		JButton CadPF = new JButton("Cadastrar");
+		CadPF.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String NomeValue = txtNomePF.getText();
+				String CategoriaValue = txtCategoriaPF.getText();
+				String CepValue = txtCepPF.getText();
+				String EnderecoValue = txtEnderecoPF.getText();
+				String NumeroValue = txtNumeroPF.getText();
+				String EstadoValue = txtEstadoPF.getText();
+				String CidadeValue = txtCidadePF.getText();
+				String BairroValue = txtBairroPF.getText();
+				String EmailValue = txtEmailPF.getText();
+				String CelularValue = txtCelularPF.getText();
+				String TelefoneValue = txtTelefonePF.getText();
+				String SiteValue = txtSitePF.getText();
+				String CnpjValue = txtCpfPF.getText();
+				String ObservacaoValue = txtObservacaoPF.getText();
+				Boolean error = false;
+				String ErrorText = "";
+
+				if (NomeValue.isEmpty()) {
+					error = true;
+					ErrorText = "Preencha o Nome do Funcionário ";
+				}
+				if (CategoriaValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha a categoria ";
+					} else {
+						ErrorText += "\nPreencha a categoria";
+					}
+
+				}
+				if (CepValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o CEP ";
+					} else {
+						ErrorText += "\nPreencha o CEP";
+					}
+				}
+				if (EnderecoValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o endereco ";
+					} else {
+						ErrorText += "\nPreencha o endereco";
+					}
+				}
+				if (NumeroValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o numero ";
+					} else {
+						ErrorText += "\nPreencha o numero";
+					}
+				}
+				if (EstadoValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o estado ";
+					} else {
+						ErrorText += "\nPreencha o estado";
+					}
+				}
+				if (CidadeValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha a cidade ";
+					} else {
+						ErrorText += "\nPreencha a cidade";
+					}
+
+				}
+				if (BairroValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o bairro ";
+					} else {
+						ErrorText += "\nPreencha o bairro";
+					}
+				}
+				if (EmailValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o email ";
+					} else {
+						ErrorText += "\nPreencha o email";
+					}
+				}
+				if (CelularValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o celular ";
+					} else {
+						ErrorText += "\nPreencha o celular";
+					}
+				}
+				if (TelefoneValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o telefone ";
+					} else {
+						ErrorText += "\nPreencha o telefone";
+					}
+				}
+				if (SiteValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o site ";
+					} else {
+						ErrorText += "\nPreencha o site";
+					}
+				}
+				if (CnpjValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o CPF ";
+					} else {
+						ErrorText += "\nPreencha o CPF";
+					}
+				}
+				if (ObservacaoValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha a Observacao ";
+					} else {
+						ErrorText += "\nPreencha a Observacao";
+					}
+
+				}
+				if (error == false) {
+					JOptionPane.showMessageDialog(null, "Fornecedor Cadastrado!", "Sucesso",
+							JOptionPane.DEFAULT_OPTION);
+				} else {
+					JOptionPane.showMessageDialog(null, ErrorText, "Erro", JOptionPane.ERROR_MESSAGE);
+				}
+				ModelFornecedorPFisica ff = new ModelFornecedorPFisica(String.valueOf(txtNomePF.getText()), String.valueOf(txtCategoriaPF.getText()),
+						String.valueOf(txtCepPF.getText()), String.valueOf(txtEnderecoPF.getText()),
+						Integer.parseInt(txtNumeroPF.getText()), String.valueOf(txtEstadoPF.getText()), String.valueOf(txtCidadePF.getText()), 
+						String.valueOf(txtBairroPF.getText()), String.valueOf(txtEmailPF.getText()), String.valueOf(txtCelularPF.getText()), 
+						String.valueOf(txtTelefonePF.getText()), String.valueOf(txtSitePF.getText()), String.valueOf(txtCpfPF.getText()),
+						String.valueOf(txtObservacaoPF.getText()),1);
+				int erro = new FornecedorPFisicaController().cadastraFornecedorPFisica(ff);
+			    System.out.println(erro);
+			}
+		});
 		
 		JButton btnNewButton_1 = new JButton("Cancelar");
 		btnNewButton_1.addActionListener(new ActionListener() {

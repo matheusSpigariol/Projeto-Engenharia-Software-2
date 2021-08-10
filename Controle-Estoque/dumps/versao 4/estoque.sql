@@ -23,25 +23,25 @@ DROP TABLE IF EXISTS `fornecedorjuridica`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fornecedorjuridica` (
-  `Nome Fantasia` varchar(45) NOT NULL,
-  `Categoria` varchar(45) NOT NULL,
-  `CEP` varchar(45) NOT NULL,
-  `Endereco` varchar(45) NOT NULL,
-  `Numero` int NOT NULL,
-  `Estado` varchar(45) NOT NULL,
-  `Cidade` varchar(45) NOT NULL,
-  `Bairro` varchar(45) NOT NULL,
-  `Email` varchar(45) NOT NULL,
-  `Telefone` varchar(45) NOT NULL,
-  `Celular` varchar(45) NOT NULL,
-  `Site` varchar(45) NOT NULL,
-  `CNPJ` varchar(45) NOT NULL,
-  `Observacao` varchar(45) NOT NULL,
-  `Razao Social` varchar(45) NOT NULL,
-  `Inscricao Estadual` varchar(45) NOT NULL,
-  `fornecedorJuridicacol` varchar(45) NOT NULL,
-  PRIMARY KEY (`CNPJ`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `nomefantasia` varchar(45) NOT NULL,
+  `categoria` varchar(45) NOT NULL,
+  `cep` varchar(45) NOT NULL,
+  `endereco` varchar(45) NOT NULL,
+  `numero` int NOT NULL,
+  `estado` varchar(45) NOT NULL,
+  `cidade` varchar(45) NOT NULL,
+  `bairro` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `telefone` varchar(45) NOT NULL,
+  `celular` varchar(45) NOT NULL,
+  `site` varchar(45) NOT NULL,
+  `cnpj` varchar(45) NOT NULL,
+  `observacao` varchar(45) NOT NULL,
+  `razaosocial` varchar(45) NOT NULL,
+  `inscest` varchar(45) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=armscii8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,6 +50,7 @@ CREATE TABLE `fornecedorjuridica` (
 
 LOCK TABLES `fornecedorjuridica` WRITE;
 /*!40000 ALTER TABLE `fornecedorjuridica` DISABLE KEYS */;
+INSERT INTO `fornecedorjuridica` VALUES ('1','1','1','1',1,'1','1','1','1','1','1','1','1','1','1','1',1);
 /*!40000 ALTER TABLE `fornecedorjuridica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,22 +62,23 @@ DROP TABLE IF EXISTS `fornecedorpfisica`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fornecedorpfisica` (
-  `numero` int NOT NULL,
-  `Nome` varchar(45) NOT NULL,
-  `Categoria` varchar(45) NOT NULL,
-  `CEP` varchar(45) NOT NULL,
-  `Endereco` varchar(45) NOT NULL,
-  `Estado` varchar(45) NOT NULL,
-  `Cidade` varchar(45) NOT NULL,
-  `Bairro` varchar(45) NOT NULL,
-  `Email` varchar(45) NOT NULL,
-  `Telefone` varchar(45) NOT NULL,
-  `Celular` varchar(45) NOT NULL,
-  `Site` varchar(45) NOT NULL,
-  `CPF` varchar(45) NOT NULL,
-  `Observacao` varchar(45) NOT NULL,
-  PRIMARY KEY (`CPF`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `nome` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `categoria` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `cep` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `endereco` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `numero` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `estado` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `cidade` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `bairro` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `telefone` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `celular` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `site` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `cpf` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `observacao` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,6 +87,7 @@ CREATE TABLE `fornecedorpfisica` (
 
 LOCK TABLES `fornecedorpfisica` WRITE;
 /*!40000 ALTER TABLE `fornecedorpfisica` DISABLE KEYS */;
+INSERT INTO `fornecedorpfisica` VALUES ('1','1','1','1','1','1','1','1','1','1','1','1','1','1',1),('2','12','12','12','12','12','12','12','12','12','12','12','12','1',2);
 /*!40000 ALTER TABLE `fornecedorpfisica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,7 +107,7 @@ CREATE TABLE `funcionario` (
   `usuario` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,7 +116,7 @@ CREATE TABLE `funcionario` (
 
 LOCK TABLES `funcionario` WRITE;
 /*!40000 ALTER TABLE `funcionario` DISABLE KEYS */;
-INSERT INTO `funcionario` VALUES ('','',25,'','','',''),('vinicius','12345678900',26,'abc','19999999999','vini','123');
+INSERT INTO `funcionario` VALUES ('Antonio','3333333333',27,'Admin','3599259558','admin','admin'),('Strauss','11111111111',30,'professor','1111111111','admin','admin');
 /*!40000 ALTER TABLE `funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,14 +129,14 @@ DROP TABLE IF EXISTS `produto`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `produto` (
   `nome` varchar(255) NOT NULL,
-  `descricao` varchar(255) NOT NULL,
+  `tipo_produto` varchar(255) NOT NULL,
   `id` int NOT NULL AUTO_INCREMENT,
   `quantidade` int NOT NULL,
   `preco` double NOT NULL,
   `validade` varchar(255) NOT NULL,
   `fornecedor` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,6 +145,7 @@ CREATE TABLE `produto` (
 
 LOCK TABLES `produto` WRITE;
 /*!40000 ALTER TABLE `produto` DISABLE KEYS */;
+INSERT INTO `produto` VALUES ('Coca cola','Alimentos perecíveis',5,5,8,'22/10/2022','Pepsico'),('teste','Alimentos perecíveis',6,5,5,'15/02/30','Natura'),('Coca cola espumante','Bebidas',7,10,8,'22/07/2025','Pepsico'),('Teste','Higiene Pessoal',8,5,5,'22/11/2026','Teste'),('a','Alimentos perecíveis',9,1,1,'1','1');
 /*!40000 ALTER TABLE `produto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -154,4 +158,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-02 19:24:14
+-- Dump completed on 2021-08-09 23:53:55

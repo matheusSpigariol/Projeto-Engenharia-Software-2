@@ -15,11 +15,15 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.UIManager;
 
 import conexaojdbc.ConnectionFactory;
+import controller.FornecedorJuridicaController;
+import model.ModelFornecedorJuridica;
 
 import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 
 public class ViewFoenecedorJuridica {
@@ -159,6 +163,170 @@ public class ViewFoenecedorJuridica {
 		txtObservacaoPJ.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Cadastrar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String NomeValue = textNomeFantasiaPJ.getText();
+				String CategoriaValue = txtCategoriaPJ.getText();
+				String CepValue = txtCepPJ.getText();
+				String EnderecoValue = txtEnderecoPJ.getText();
+				String NumeroValue = txtNumeroPJ.getText();
+				String EstadoValue = txtEstadoPJ.getText();
+				String CidadeValue = txtCidadePJ.getText();
+				String BairroValue = txtBairroPJ.getText();
+				String EmailValue = txtEmailPJ.getText();
+				String CelularValue = txtCelularPJ.getText();
+				String TelefoneValue = txtTelefonePJ.getText();
+				String SiteValue = txtSitePJ.getText();
+				String CnpjValue = txtCnpjPJ.getText();
+				String ObservacaoValue = txtObservacaoPJ.getText();
+				String RazaoSocialValue = textRazaoSocialPJ.getText();
+				String InscEstValue = textInscEstPJ.getText();
+				Boolean error = false;
+				String ErrorText = "";
+
+				if (NomeValue.isEmpty()) {
+					error = true;
+					ErrorText = "Preencha o Nome do Funcionário ";
+				}
+				if (CategoriaValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha a categoria ";
+					} else {
+						ErrorText += "\nPreencha a categoria";
+					}
+
+				}
+				if (CepValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o CEP ";
+					} else {
+						ErrorText += "\nPreencha o CEP";
+					}
+				}
+				if (EnderecoValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o endereco ";
+					} else {
+						ErrorText += "\nPreencha o endereco";
+					}
+				}
+				if (NumeroValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o numero ";
+					} else {
+						ErrorText += "\nPreencha o numero";
+					}
+				}
+				if (EstadoValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o estado ";
+					} else {
+						ErrorText += "\nPreencha Preencha o estado";
+					}
+				}
+				if (CidadeValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha a cidade ";
+					} else {
+						ErrorText += "\nPreencha a cidade";
+					}
+
+				}
+				if (BairroValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o bairro ";
+					} else {
+						ErrorText += "\nPreencha o bairro";
+					}
+				}
+				if (EmailValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o email ";
+					} else {
+						ErrorText += "\nPreencha o email";
+					}
+				}
+				if (CelularValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o celular ";
+					} else {
+						ErrorText += "\nPreencha o celular";
+					}
+				}
+				if (TelefoneValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o telefone ";
+					} else {
+						ErrorText += "\nPreencha o telefone";
+					}
+				}
+				if (SiteValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o site ";
+					} else {
+						ErrorText += "\nPreencha o site";
+					}
+				}
+				if (CnpjValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha o CNPJ ";
+					} else {
+						ErrorText += "\nPreencha o CNPJ";
+					}
+				}
+				if (ObservacaoValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha a Observacao ";
+					} else {
+						ErrorText += "\nPreencha a Observacao";
+					}
+
+				}
+				if (RazaoSocialValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha a Razao Social ";
+					} else {
+						ErrorText += "\nPreencha a Razao Social";
+					}
+				}
+				if (InscEstValue.isEmpty()) {
+					error = true;
+					if (ErrorText.isEmpty()) {
+						ErrorText = "Preencha a Inscricao Estadual ";
+					} else {
+						ErrorText += "\nPreencha o Inscricao Estadual";
+					}
+				}
+				if (error == false) {
+					JOptionPane.showMessageDialog(null, "Fornecedor Cadastrado!", "Sucesso",
+							JOptionPane.DEFAULT_OPTION);
+				} else {
+					JOptionPane.showMessageDialog(null, ErrorText, "Erro", JOptionPane.ERROR_MESSAGE);
+				}
+				ModelFornecedorJuridica fj = new ModelFornecedorJuridica(String.valueOf(textNomeFantasiaPJ.getText()), String.valueOf(txtCategoriaPJ.getText()),
+						String.valueOf(txtCepPJ.getText()), String.valueOf(txtEnderecoPJ.getText()),
+						Integer.parseInt(txtNumeroPJ.getText()), String.valueOf(txtEstadoPJ.getText()), String.valueOf(txtCidadePJ.getText()), 
+						String.valueOf(txtBairroPJ.getText()), String.valueOf(txtEmailPJ.getText()), String.valueOf(txtCelularPJ.getText()), 
+						String.valueOf(txtTelefonePJ.getText()), String.valueOf(txtSitePJ.getText()), String.valueOf(txtCnpjPJ.getText()),
+						String.valueOf(txtObservacaoPJ.getText()), String.valueOf(textRazaoSocialPJ.getText()), String.valueOf(textInscEstPJ.getText()),1);
+				int erro = new FornecedorJuridicaController().cadastrarFornecedorJuridica(fj);
+			    System.out.println(erro);
+			}
+		});
 		
 		JButton btnNewButton_1 = new JButton("Cancelar");
 		btnNewButton_1.addActionListener(new ActionListener() {
