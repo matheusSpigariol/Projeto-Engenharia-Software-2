@@ -71,7 +71,7 @@ public class ViewListaFunc {
 		model = new DefaultTableModel();
 		table = new JTable(model);
 
-		FuncionarioDAO fdao = new FuncionarioDAO();
+		FuncionarioController fctrl = new FuncionarioController();
 
 		model.addColumn("ID");
 		model.addColumn("Nome");
@@ -108,10 +108,10 @@ public class ViewListaFunc {
 			public void actionPerformed(ActionEvent e) {
 				int index = table.getSelectedRow();
 				int removeID = (int) table.getValueAt(index, 0);
-				FuncionarioDAO f1 = new FuncionarioDAO();
-				f1.excluiFuncionario(removeID);
+				int erro = new FuncionarioController().removerFuncionario(removeID);
+				System.out.println(erro);
 				model.setRowCount(0);
-				for (ModelFuncionario f : fdao.getAllFuncionario()) {
+				for (ModelFuncionario f : fctrl.getAllFuncionario()) {
 
 					model.addRow(new Object[] { f.getId(), f.getNome(), f.getCpf(), f.getCargo(), f.getTelefone(),
 							f.getUsuario(), f.getSenha() });
@@ -147,7 +147,7 @@ public class ViewListaFunc {
 				int erro = new FuncionarioController().editarFuncionario(funAltera);
 				System.out.println(erro);
 				model.setRowCount(0);
-				for (ModelFuncionario f : fdao.getAllFuncionario()) {
+				for (ModelFuncionario f : fctrl.getAllFuncionario()) {
 
 					model.addRow(new Object[] { f.getId(), f.getNome(), f.getCpf(), f.getCargo(), f.getTelefone(),
 							f.getUsuario(), f.getSenha() });
@@ -172,7 +172,7 @@ public class ViewListaFunc {
 				textField_6.setText("");
 				textoBusca.setText("");
 				model.setRowCount(0);
-				for (ModelFuncionario f : fdao.getAllFuncionario()) {
+				for (ModelFuncionario f : fctrl.getAllFuncionario()) {
 
 					model.addRow(new Object[] { f.getId(), f.getNome(), f.getCpf(), f.getCargo(), f.getTelefone(),
 							f.getUsuario(), f.getSenha() });
@@ -217,13 +217,13 @@ public class ViewListaFunc {
 				model.setRowCount(0); // limpa a tabela
 
 				if (textoBusca.getText().equals("")) {
-					for (ModelFuncionario f : fdao.getAllFuncionario()) {
+					for (ModelFuncionario f : fctrl.getAllFuncionario()) {
 
 						model.addRow(new Object[] { f.getId(), f.getNome(), f.getCpf(), f.getCargo(), f.getTelefone(),
 								f.getUsuario(), f.getSenha() });
 					}
 				} else {
-					for (ModelFuncionario f : fdao.getPesquisa(textoBusca.getText())) {
+					for (ModelFuncionario f : fctrl.getPesquisa(textoBusca.getText())) {
 
 						model.addRow(new Object[] { f.getId(), f.getNome(), f.getCpf(), f.getCargo(), f.getTelefone(),
 								f.getUsuario(), f.getSenha() });
@@ -253,7 +253,7 @@ public class ViewListaFunc {
 
 		// 09/06/2021 - Antonio, Matheus e Rapha
 
-		for (ModelFuncionario f : fdao.getAllFuncionario()) {
+		for (ModelFuncionario f : fctrl.getAllFuncionario()) {
 
 			model.addRow(new Object[] { f.getId(), f.getNome(), f.getCpf(), f.getCargo(), f.getTelefone(),
 					f.getUsuario(), f.getSenha() });

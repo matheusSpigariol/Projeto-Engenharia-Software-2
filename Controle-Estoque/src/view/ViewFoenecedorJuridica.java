@@ -15,8 +15,6 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.UIManager;
 
 import conexaojdbc.ConnectionFactory;
-import controller.FornecedorJuridicaController;
-import model.ModelFornecedorJuridica;
 
 import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -317,6 +315,7 @@ public class ViewFoenecedorJuridica {
 				} else {
 					JOptionPane.showMessageDialog(null, ErrorText, "Erro", JOptionPane.ERROR_MESSAGE);
 				}
+				/*
 				ModelFornecedorJuridica fj = new ModelFornecedorJuridica(String.valueOf(textNomeFantasiaPJ.getText()), String.valueOf(txtCategoriaPJ.getText()),
 						String.valueOf(txtCepPJ.getText()), String.valueOf(txtEnderecoPJ.getText()),
 						Integer.parseInt(txtNumeroPJ.getText()), String.valueOf(txtEstadoPJ.getText()), String.valueOf(txtCidadePJ.getText()), 
@@ -325,6 +324,7 @@ public class ViewFoenecedorJuridica {
 						String.valueOf(txtObservacaoPJ.getText()), String.valueOf(textRazaoSocialPJ.getText()), String.valueOf(textInscEstPJ.getText()),1);
 				int erro = new FornecedorJuridicaController().cadastrarFornecedorJuridica(fj);
 			    System.out.println(erro);
+			    */
 			}
 		});
 		

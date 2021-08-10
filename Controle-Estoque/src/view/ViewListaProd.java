@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
+import controller.FuncionarioController;
 import controller.ProdutoController;
 import dao.ProdutoDAO;
 import model.ModelProduto;
@@ -71,7 +72,7 @@ public class ViewListaProd {
 		model = new DefaultTableModel();
 		table = new JTable(model);
 
-		ProdutoDAO pdao = new ProdutoDAO();
+		ProdutoController pctrl = new ProdutoController();
 
 		model.addColumn("ID");
 		model.addColumn("Nome");
@@ -108,10 +109,10 @@ public class ViewListaProd {
 			public void actionPerformed(ActionEvent e) {
 				int index = table.getSelectedRow();
 				int removeID = (int) table.getValueAt(index, 0);
-				ProdutoDAO p1 = new ProdutoDAO();
-				p1.excluiProduto(removeID);
+				int erro = new ProdutoController().removerProduto(removeID);
+				System.out.println(erro);
 				model.setRowCount(0);
-				for (ModelProduto p : pdao.getAllProduto()) {
+				for (ModelProduto p : pctrl.getAllProduto()) {
 
 					model.addRow(new Object[] { p.getId(), p.getNome(), p.getTipoProduto(), p.getQuantidade(),
 							p.getPreco(), p.getValidade(), p.getFornecedor() });
@@ -147,7 +148,7 @@ public class ViewListaProd {
 				int erro = new ProdutoController().editarProduto(prodAltera);
 				System.out.println(erro);
 				model.setRowCount(0);
-				for (ModelProduto p : pdao.getAllProduto()) {
+				for (ModelProduto p : pctrl.getAllProduto()) {
 
 					model.addRow(new Object[] { p.getId(), p.getNome(), p.getTipoProduto(), p.getQuantidade(),
 							p.getPreco(), p.getValidade(), p.getFornecedor() });
@@ -172,7 +173,7 @@ public class ViewListaProd {
 				textField_6.setText("");
 				textoBusca.setText("");
 				model.setRowCount(0);
-				for (ModelProduto p : pdao.getAllProduto()) {
+				for (ModelProduto p : pctrl.getAllProduto()) {
 
 					model.addRow(new Object[] { p.getId(), p.getNome(), p.getTipoProduto(), p.getQuantidade(),
 							p.getPreco(), p.getValidade(), p.getFornecedor() });
@@ -229,13 +230,13 @@ public class ViewListaProd {
 				model.setRowCount(0); // limpa a tabela
 
 				if (textoBusca.getText().equals("")) {
-					for (ModelProduto p : pdao.getAllProduto()) {
+					for (ModelProduto p : pctrl.getAllProduto()) {
 
 						model.addRow(new Object[] { p.getId(), p.getNome(), p.getTipoProduto(), p.getQuantidade(),
 								p.getPreco(), p.getValidade(), p.getFornecedor() });
 					}
 				} else {
-					for (ModelProduto p : pdao.getPesquisa(textoBusca.getText())) {
+					for (ModelProduto p : pctrl.getPesquisa(textoBusca.getText())) {
 
 						model.addRow(new Object[] { p.getId(), p.getNome(), p.getTipoProduto(), p.getQuantidade(),
 								p.getPreco(), p.getValidade(), p.getFornecedor() });
@@ -263,7 +264,7 @@ public class ViewListaProd {
 		scrollPane.setBounds(10, 56, 404, 139);
 		frmListaDeProdutos.getContentPane().add(scrollPane);
 
-		for (ModelProduto p : pdao.getAllProduto()) {
+		for (ModelProduto p : pctrl.getAllProduto()) {
 
 			model.addRow(new Object[] { p.getId(), p.getNome(), p.getTipoProduto(), p.getQuantidade(), p.getPreco(),
 					p.getValidade(), p.getFornecedor() });

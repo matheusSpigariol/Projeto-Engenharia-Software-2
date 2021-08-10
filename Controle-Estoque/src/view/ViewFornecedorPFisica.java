@@ -15,8 +15,6 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.UIManager;
 
 import conexaojdbc.ConnectionFactory;
-import controller.FornecedorPFisicaController;
-import model.ModelFornecedorPFisica;
 
 import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -295,6 +293,7 @@ public class ViewFornecedorPFisica {
 				} else {
 					JOptionPane.showMessageDialog(null, ErrorText, "Erro", JOptionPane.ERROR_MESSAGE);
 				}
+				/*
 				ModelFornecedorPFisica ff = new ModelFornecedorPFisica(String.valueOf(txtNomePF.getText()), String.valueOf(txtCategoriaPF.getText()),
 						String.valueOf(txtCepPF.getText()), String.valueOf(txtEnderecoPF.getText()),
 						Integer.parseInt(txtNumeroPF.getText()), String.valueOf(txtEstadoPF.getText()), String.valueOf(txtCidadePF.getText()), 
@@ -303,6 +302,7 @@ public class ViewFornecedorPFisica {
 						String.valueOf(txtObservacaoPF.getText()),1);
 				int erro = new FornecedorPFisicaController().cadastraFornecedorPFisica(ff);
 			    System.out.println(erro);
+			    */
 			}
 		});
 		

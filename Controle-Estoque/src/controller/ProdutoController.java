@@ -1,6 +1,10 @@
 package controller;
 
+import java.util.ArrayList;
+
+import dao.FuncionarioDAO;
 import dao.ProdutoDAO;
+import model.ModelFuncionario;
 import model.ModelProduto;
 
 public class ProdutoController {
@@ -15,6 +19,19 @@ public class ProdutoController {
 	 * retorna 6 se fornecedor é null
 	 * retorna 7 se DAO retorna falso
 	 */
+	
+	public ArrayList<ModelProduto> getAllProduto() {
+		return (new ProdutoDAO().getAllProduto());
+	}
+	
+	public ModelProduto getProdutos(int id) {
+		return (new ProdutoDAO().getProduto(id));
+	}
+	
+	public ArrayList<ModelProduto> getPesquisa(String s) {
+		return (new ProdutoDAO().getPesquisa(s));
+	}
+	
 	public int cadastrarProduto(ModelProduto p) {
 		//Precisa verificar se produto ja existe
 		if((p.getNome() == null || p.getNome() == "")){
@@ -56,6 +73,15 @@ public class ProdutoController {
 		}else {
 			return 7;
 		}
+	}
+	
+	public int removerProduto(int id) {
+		
+		if(new ProdutoDAO().excluiProduto(id)) {
+			return 0;
+		}
+
+		return 1;
 	}
 	
 }

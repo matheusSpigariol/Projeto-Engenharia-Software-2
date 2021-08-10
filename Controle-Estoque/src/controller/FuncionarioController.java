@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.ArrayList;
+
 import dao.FuncionarioDAO;
 import model.ModelFuncionario;
 
@@ -24,6 +26,19 @@ public class FuncionarioController{
 	 * retorna 5 se senha é null 
 	 * retorna 6 se DAO retorna falso
 	 */
+	
+	public ArrayList<ModelFuncionario> getAllFuncionario() {
+		return (new FuncionarioDAO().getAllFuncionario());
+	}
+	
+	public ModelFuncionario getFuncionario(int id) {
+		return (new FuncionarioDAO().getFuncionario(id));
+	}
+	
+	public ArrayList<ModelFuncionario> getPesquisa(String s) {
+		return (new FuncionarioDAO().getPesquisa(s));
+	}
+	
 	public int cadastrarFuncionario(ModelFuncionario f) {
 		//Precisa verificar se funcionario ja existe
 		if((f.getNome() == null || f.getNome() == "")){
@@ -62,5 +77,14 @@ public class FuncionarioController{
 			return 6;
 		}
 		
+	}
+	
+	public int removerFuncionario(int id) {
+		
+		if(new FuncionarioDAO().excluiFuncionario(id)) {
+			return 0;
+		}
+
+		return 1;
 	}
 }
